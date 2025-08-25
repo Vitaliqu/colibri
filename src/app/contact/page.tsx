@@ -1,62 +1,16 @@
 "use client"
-import React, { useState } from "react";
+import React from "react";
 import {
     MapPin,
     Phone,
     Mail,
     Clock,
     Calendar,
-    Send,
-    CheckCircle
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 
 export default function ContactPage() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: ""
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        // Імітація відправки форми
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-
-        // Скидання форми після успіху
-        setTimeout(() => {
-            setIsSubmitted(false);
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                service: "",
-                message: ""
-            });
-        }, 3000);
-    };
-
     const contactInfo = [
         {
             icon: MapPin,

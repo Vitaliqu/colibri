@@ -182,7 +182,8 @@ export default function AboutPage() {
                             >
                                 <div className="relative">
                                     <div className="aspect-square overflow-hidden">
-                                        <img
+                                        <Image
+                                            fill
                                             src={member.image}
                                             alt={member.name}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

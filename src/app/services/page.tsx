@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
     Heart,
     Sparkles,
@@ -106,7 +107,8 @@ export default function ServicesPage() {
                             >
                                 <div className="relative">
                                     <div className="aspect-[3/2] overflow-hidden">
-                                        <img
+                                        <Image
+                                            fill
                                             src={service.image}
                                             alt={service.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

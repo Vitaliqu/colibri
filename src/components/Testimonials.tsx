@@ -3,6 +3,7 @@
 import React from "react";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 const testimonials = [
     {
@@ -63,12 +64,14 @@ export default function Testimonials() {
                                 <div className="relative mb-6">
                                     <Quote className="absolute -top-2 -left-2 w-8 h-8 text-lime-200" />
                                     <p className="text-gray-700 leading-relaxed italic pl-6">
-                                        "{testimonial.content}"
+                                        {testimonial.content}
                                     </p>
                                 </div>
 
                                 <div className="flex items-center space-x-4">
-                                    <img
+                                    <Image
+                                        width={200}
+                                        height={200}
                                         src={testimonial.image}
                                         alt={testimonial.name}
                                         className="w-12 h-12 rounded-full object-cover ring-4 ring-lime-100"
