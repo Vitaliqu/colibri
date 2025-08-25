@@ -1,0 +1,121 @@
+import React from "react";
+import Link from "next/link";
+import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Heart } from "lucide-react";
+
+const navigationItems = [
+    { title: "Головна", url: "/" },
+    { title: "Послуги", url: "/services" },
+    { title: "Про нас", url: "/about" },
+    { title: "Контакти", url: "/contact" }
+];
+
+export const Footer: React.FC = () => {
+    return (
+        <footer className="bg-gray-900 text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-lime-900 opacity-90"></div>
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {/* Бренд */}
+                    <div>
+                        <div className="flex items-center space-x-3 mb-6">
+                            <div className="w-12 h-12 bg-gradient-to-br from-lime-400 to-lime-600 rounded-full flex items-center justify-center">
+                                <Heart className="w-6 h-6 text-white transform rotate-12" />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold">Colibri</h3>
+                                <p className="text-lime-300 text-sm">Стоматологічна клініка</p>
+                            </div>
+                        </div>
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                            Ваша усмішка — наша пристрасть. Отримайте професійний стоматологічний догляд з турботою та індивідуальним підходом, щоб кожен візит був комфортним та без стресу.
+                        </p>
+                        <div className="flex space-x-4">
+                            <a href="#" className="w-10 h-10 bg-lime-600 hover:bg-lime-500 rounded-full flex items-center justify-center transition-colors">
+                                <Facebook className="w-5 h-5" />
+                            </a>
+                            <a href="#" className="w-10 h-10 bg-lime-600 hover:bg-lime-500 rounded-full flex items-center justify-center transition-colors">
+                                <Instagram className="w-5 h-5" />
+                            </a>
+                            <a href="#" className="w-10 h-10 bg-lime-600 hover:bg-lime-500 rounded-full flex items-center justify-center transition-colors">
+                                <Twitter className="w-5 h-5" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Швидкі посилання */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-6 text-lime-300">Швидкі посилання</h4>
+                        <ul className="space-y-3">
+                            {navigationItems.map((item) => (
+                                <li key={item.title}>
+                                    <Link
+                                        href={item.url}
+                                        className="text-gray-300 hover:text-lime-300 transition-colors duration-200"
+                                    >
+                                        {item.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Послуги */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-6 text-lime-300">Послуги</h4>
+                        <ul className="space-y-3 text-gray-300">
+                            <li>Загальна стоматологія</li>
+                            <li>Косметична стоматологія</li>
+                            <li>Ортодонтія</li>
+                            <li>Хірургія ротової порожнини</li>
+                            <li>Профілактичний догляд</li>
+                            <li>Екстрена допомога</li>
+                        </ul>
+                    </div>
+
+                    {/* Контактна інформація */}
+                    <div>
+                        <h4 className="text-lg font-semibold mb-6 text-lime-300">Контакти</h4>
+                        <div className="space-y-4 text-gray-300">
+                            <div className="flex items-start space-x-3">
+                                <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <p>вул. Стоматологічна, 123</p>
+                                    <p>Місто Здоров’я, HC 12345</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center space-x-3">
+                                <Phone className="w-5 h-5 text-lime-400" />
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div className="flex items-center space-x-3">
+                                <Mail className="w-5 h-5 text-lime-400" />
+                                <span>info@colibri.dental</span>
+                            </div>
+                            <div className="flex items-start space-x-3">
+                                <Clock className="w-5 h-5 text-lime-400 mt-0.5" />
+                                <div>
+                                    <p>Пн-Пт: 08:00 - 18:00</p>
+                                    <p>Сб: 09:00 - 15:00</p>
+                                    <p>Нд: Вихідний</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="border-t border-gray-700 mt-12 pt-8">
+                    <div className="flex flex-col md:flex-row justify-between items-center">
+                        <p className="text-gray-400 text-sm">
+                            © 2024 Colibri Стоматологічна клініка. Всі права захищені.
+                        </p>
+                        <div className="flex space-x-6 mt-4 md:mt-0">
+                            <a href="#" className="text-gray-400 hover:text-lime-300 text-sm transition-colors">Політика конфіденційності</a>
+                            <a href="#" className="text-gray-400 hover:text-lime-300 text-sm transition-colors">Умови обслуговування</a>
+                            <a href="#" className="text-gray-400 hover:text-lime-300 text-sm transition-colors">Політика файлів cookie</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
