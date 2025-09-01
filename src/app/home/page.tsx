@@ -12,6 +12,10 @@ import ServicesPreview from "../../components/ServicesPreview";
 
 export default function Home() {
     const [isPhoneOpen, setIsPhoneOpen] = useState(false);
+    const handlePhoneClick = () => {
+        if (!isPhoneOpen) setIsPhoneOpen(true);
+        else window.location.href = "tel:+380968055143";
+    };
     return (
         <div className="overflow-hidden mt-10">
             <HeroSection/>
@@ -27,7 +31,7 @@ export default function Home() {
                 <div className="flex justify-center text-center  px-4 sm:px-6 lg:px-8 relative">
                     <div
                         className="transform w-full transition-all mx- flex justify-center flex-col items-center  duration-1000 translate-y-0 opacity-100">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold -mt-8 md:mt-16 text-gray-900 mb-6">
                             Готові трансформувати
                             <span className="text-lime-600"><br/> свою усмішку?</span>
                         </h2>
@@ -38,20 +42,16 @@ export default function Home() {
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center md:mb-12">
                             <Button
-                                onClick={() => setIsPhoneOpen(true)}
-                                className={`md:w-md py-2 text-lg cursor-pointer hover:bg-gray-100  transition-all duration-300 ${
+                                onClick={handlePhoneClick}
+                                className={`h-10 md:hidden px-4 cursor-pointer text-lg lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300 ${
                                     isPhoneOpen
-                                        ? "bg-white text-lime-600 border border-lime-600"
+                                        ? "bg-white hover:bg-gray-100 text-lime-600 border border-lime-600"
                                         : "bg-lime-600 text-white hover:bg-lime-700"
                                 }`}
                             >
-                                {isPhoneOpen ? (
-                                    <div className="flex items-center  justify-center gap-2">
-                                        <Phone className="w-4 h-4"/>+380 96-80-55-143
-                                    </div>
-                                ) : (
-                                    "Записатися на прийом"
-                                )}
+                                {isPhoneOpen ? <div className="flex items-center justify-center gap-2">
+                                    <Phone className="w-4 h-4"/>+380 96-80-55-143
+                                </div> : "Записатися на прийом"}
                             </Button>
                         </div>
 

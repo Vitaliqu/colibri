@@ -1,4 +1,5 @@
 "use client";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import React, {useRef, useEffect} from "react";
 import mapboxgl from "mapbox-gl";
@@ -9,6 +10,7 @@ import {
     Clock,
 } from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
+import {Button} from "@/components/ui/button";
 
 mapboxgl.accessToken =
     "pk.eyJ1Ijoidml0YWxpcSIsImEiOiJjbTlidjBhZHUwamVyMm1xMWNpOTdtOHU3In0.pFFBZhqOKneKoVcFfrIiLg";
@@ -28,17 +30,16 @@ function ClinicMap({coordinates, googleMapsLink}: ClinicMapProps) {
 
         mapRef.current = new mapboxgl.Map({
             container: mapContainerRef.current,
-            style: "mapbox://styles/mapbox/standard",
-            center: coordinates,
+            style: 'mapbox://styles/mapbox/standard', center: coordinates,
             zoom: 16,
             attributionControl: false,
         });
 
-        const marker = new mapboxgl.Marker().setLngLat(coordinates).addTo(mapRef.current);
 
-        marker.getElement().addEventListener("click", () => {
-            window.open(googleMapsLink);
-        });
+        new mapboxgl.Marker({color: "green"})
+            .setLngLat(coordinates)
+            .addTo(mapRef.current);
+
 
         return () => mapRef.current?.remove();
     }, [coordinates, googleMapsLink]);
@@ -135,11 +136,19 @@ export default function ContactPage() {
                     </div>
 
                     {/* Map Section */}
-                    <div className="h-[400px] md:h-[600px] mx-8 rounded-lg overflow-hidden shadow-lg">
+                    <div className="h-[400px] md:h-[600px] mx-8 rounded-lg relative overflow-hidden shadow-lg">
                         <ClinicMap
                             coordinates={clinicCoordinates}
                             googleMapsLink="https://maps.app.goo.gl/ZfKRJ9yTTsHzcXCP7"
                         />
+                        <Button onClick={() => {
+
+                        }}
+                                className={' absolute right-2 top-2 bg-lime-600 text-white hover:bg-lime-700 h-10 px-4 cursor-pointer text-sm lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300'}>
+                            <a target="_blank" className={'absolute w-full h-full'}
+                               href={'https://maps.app.goo.gl/TxLQPMqRmQgLQa8XA'}/> Перейти на карту
+
+                        </Button>
                     </div>
                 </div>
             </section>

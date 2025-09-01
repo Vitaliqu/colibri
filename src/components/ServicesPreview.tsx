@@ -63,7 +63,7 @@ export default function ServicesPreview() {
                 </div>
 
                 {/* Сітка послуг */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 md:px-0 mb-12">
                     {services.map((service) => (
                         <Card
                             key={service.title}

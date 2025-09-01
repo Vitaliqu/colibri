@@ -144,7 +144,7 @@ export default function AboutPage() {
                         {values.map((value) => (
                             <Card
                                 key={value.title}
-                                className="group mx-8 md:mx-0 bg-white transition-all border-0"
+                                className="group mx-12 md:mx-0 bg-white transition-all border-0"
                             >
                                 <CardContent className="p-8  text-center">
                                     <div
@@ -183,7 +183,7 @@ export default function AboutPage() {
                         {teamMembers.map((member) => (
                             <Card
                                 key={member.name}
-                                className="group mx-8 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden"
+                                className="group mx-12 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden"
                             >
                                 <div className="relative">
                                     <div className="aspect-square overflow-hidden">
