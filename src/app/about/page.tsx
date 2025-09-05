@@ -1,76 +1,108 @@
 'use client'
-import React from "react";
+import React, {useEffect, useState, useRef} from "react";
 import {
     Award,
     Users,
     Heart,
     Shield,
-    Clock
 } from "lucide-react";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import aboutImage from "@/components/about.jpg";
 
-const teamMembers = [
-    {
-        name: "Д-р Марія Мартінес",
-        role: "Головний стоматолог та засновниця",
-        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&h=400&q=80",
-        experience: "15+ років",
-        specialties: ["Загальна стоматологія", "Косметичні процедури"],
-        bio: "Д-р Мартінес заснувала Colibri Dental з баченням зробити стоматологічну допомогу комфортною та доступною для всіх."
-    },
-    {
-        name: "Д-р Джеймс Вілсон",
-        role: "Ортодонт",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
-        experience: "12+ років",
-        specialties: ["Ортодонтія", "Прозорі елайнери"],
-        bio: "Спеціаліст із сучасних ортодонтичних методів лікування з акцентом на дорослих та підлітків."
-    },
-    {
-        name: "Д-р Сара Чен",
-        role: "Щелепно-лицевий хірург",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
-        experience: "10+ років",
-        specialties: ["Щелепно-лицева хірургія", "Дентальні імпланти"],
-        bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
-    },
-    {
-        name: "Д-awр Сара Чен",
-        role: "Щелепно-лицевий хірург",
-        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
-        experience: "10+ років",
-        specialties: ["Щелепно-лицева хірургія", "Дентальні імпланти"],
-        bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
-    }
-];
-
-const values = [
-    {
-        icon: Heart,
-        title: "Турботливий догляд",
-        description: "Ми ставимося до кожного пацієнта з емпатією, повагою та розумінням, забезпечуючи комфорт на всьому етапі лікування."
-    },
-    {
-        icon: Shield,
-        title: "Відмінність і безпека",
-        description: "Ми дотримуємося найвищих стандартів стоматології, використовуючи передові технології та суворі протоколи безпеки."
-    },
-    {
-        icon: Users,
-        title: "Орієнтація на пацієнта",
-        description: "Ваші потреби, комфорт та цілі — у центрі всього, що ми робимо, з індивідуальними планами лікування."
-    },
-    {
-        icon: Award,
-        title: "Постійні інновації",
-        description: "Ми залишаємося на передовій стоматологічних технологій та методик, щоб забезпечити найкращі результати."
-    }
-];
-
 export default function AboutPage() {
+    const [heroVisible, setHeroVisible] = useState(false);
+    const valuesRef = useRef<HTMLDivElement | null>(null);
+    const teamRef = useRef<HTMLDivElement | null>(null);
+    const [valuesVisible, setValuesVisible] = useState(false);
+    const [teamVisible, setTeamVisible] = useState(false);
+
+    const teamMembers = [
+        {
+            name: "Д-р Марія Мартінес",
+            role: "Головний стоматолог та засновниця",
+            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&h=400&q=80",
+            experience: "15+ років",
+            specialties: ["Загальна стоматологія", "Косметичні процедури"],
+            bio: "Д-р Мартінес заснувала Colibri Dental з баченням зробити стоматологічну допомогу комфортною та доступною для всіх."
+        },
+        {
+            name: "Д-р Джеймс Вілсон",
+            role: "Ортодонт",
+            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
+            experience: "12+ років",
+            specialties: ["Ортодонтія", "Прозорі елайнери"],
+            bio: "Спеціаліст із сучасних ортодонтичних методів лікування з акцентом на дорослих та підлітків."
+        },
+        {
+            name: "Д-р Сара Чен",
+            role: "Щелепно-лицевий хірург",
+            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
+            experience: "10+ років",
+            specialties: ["Щелепно-лицева хірургія", "Дентальні імпланти"],
+            bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
+        },
+        {
+            name: "Д-awр Сара Чен",
+            role: "Щелепно-лицевий хірург",
+            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
+            experience: "10+ років",
+            specialties: ["Щелепно-лицева хірургія", "Дентальні імпланти"],
+            bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
+        }
+    ];
+
+    const values = [
+        {
+            icon: Heart,
+            title: "Турботливий догляд",
+            description: "Ми ставимося до кожного пацієнта з емпатією, повагою та розумінням, забезпечуючи комфорт на всьому етапі лікування."
+        },
+        {
+            icon: Shield,
+            title: "Відмінність і безпека",
+            description: "Ми дотримуємося найвищих стандартів стоматології, використовуючи передові технології та суворі протоколи безпеки."
+        },
+        {
+            icon: Users,
+            title: "Орієнтація на пацієнта",
+            description: "Ваші потреби, комфорт та цілі — у центрі всього, що ми робимо, з індивідуальними планами лікування."
+        },
+        {
+            icon: Award,
+            title: "Постійні інновації",
+            description: "Ми залишаємося на передовій стоматологічних технологій та методик, щоб забезпечити найкращі результати."
+        }
+    ];
+
+    // Анімація героя одразу після завантаження
+    useEffect(() => {
+        setHeroVisible(true);
+    }, []);
+
+    // IntersectionObserver для цінностей
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setValuesVisible(true);
+                observer.disconnect();
+            }
+        }, {threshold: 0.2});
+        if (valuesRef.current) observer.observe(valuesRef.current);
+    }, []);
+
+    // IntersectionObserver для команди
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setTeamVisible(true);
+                observer.disconnect();
+            }
+        }, {threshold: 0.2});
+        if (teamRef.current) observer.observe(teamRef.current);
+    }, []);
+
     return (
         <div className="min-h-screen bg-white">
 
@@ -81,50 +113,41 @@ export default function AboutPage() {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
             }}
-                     className=" relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 bg-gradient-to-br flex-col from-lime-50 via-white to-green-50 overflow-hidden">
+                     className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden">
                 <div className="absolute inset-0 bg-black opacity-40"></div>
 
-                <div className="absolute inset-0  opacity-30">
-                    <div className="w-full flex justify-center h-full" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2384cc16' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm-20 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/svg%3E")`
-                    }}></div>
-                </div>
-
-                <div
-                    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="space-y-8 col-span-2 text-white">
-                        <div>
-                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
-                                Ваша усмішка — наша
-                                <span className=" block">Пристрасть</span>
-                            </h1>
-                            <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
-                                Вже понад 15 років стоматологічна клініка Колібрі змінює усмішки та життя
-                                завдяки турботливому та сучасному догляду. Наша місія проста:
-                                надавати виняткові стоматологічні послуги у теплій та привітній атмосфері.
-                            </p>
-                            <div className="flex items-center flex-row gap-4">
-                                <Button
-                                    onClick={() => {
-                                        const el = document.getElementById("doctors");
-                                        if (el) el.scrollIntoView({behavior: "smooth"});
-                                    }}
-                                    className="border-gray-300 bg-white text-gray-700 hover:bg-gray-50 px-8 py-4 text-sm md:text-lg font-semibold group"
-                                >
-                                    Познайомитися з нашою командою
-                                </Button>
-                            </div>
-
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div
+                        className={`space-y-8 col-span-2 text-white transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+                            Ваша усмішка — наша
+                            <span className="block">Пристрасть</span>
+                        </h1>
+                        <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
+                            Вже понад 15 років стоматологічна клініка Колібрі змінює усмішки та життя
+                            завдяки турботливому та сучасному догляду. Наша місія проста:
+                            надавати виняткові стоматологічні послуги у теплій та привітній атмосфері.
+                        </p>
+                        <div className="flex items-center flex-row gap-4">
+                            <Button
+                                onClick={() => {
+                                    const el = document.getElementById("doctors");
+                                    if (el) el.scrollIntoView({behavior: "smooth"});
+                                }}
+                                className="border-gray-300 bg-white cursor-pointer hover:bg-gray-300 text-gray-700 px-8 py-4 text-sm md:text-lg font-semibold group"
+                            >
+                                Познайомитися з нашою командою
+                            </Button>
                         </div>
-
                     </div>
                 </div>
             </section>
 
             {/* Наші цінності */}
-            <section className="py-8 md:py-24 bg-white">
+            <section ref={valuesRef} className="py-8 md:py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div
+                        className={`text-center mb-16 transition-all duration-1000 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                             Наші основні
                             <span className="text-lime-600"> цінності</span>
@@ -136,10 +159,11 @@ export default function AboutPage() {
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {values.map((value) => (
+                        {values.map((value, i) => (
                             <Card
                                 key={value.title}
-                                className="group mx-12 md:mx-0 bg-white transition-all border-0"
+                                className={`group mx-12 md:mx-0 bg-white transition-all border-0 transform duration-700 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <CardContent className="p-8  text-center">
                                     <div
@@ -160,10 +184,11 @@ export default function AboutPage() {
             </section>
 
             {/* Наша команда */}
-            <section id={'doctors'}
+            <section id={'doctors'} ref={teamRef}
                      className="py-8 md:py-24 flex w-full justify-center items-center bg-gradient-to-br from-lime-50 via-white to-green-50">
                 <div className="max-w-8xl flex flex-col items-center mx-auto md:gap-6 sm:px-6 lg:px-8">
-                    <div className="text-center mb-8 md:mb-16">
+                    <div
+                        className={`text-center mb-8 md:mb-16 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                             Познайомтеся з нашою
                             <span className="text-lime-600"> командою</span>
@@ -175,10 +200,11 @@ export default function AboutPage() {
                     </div>
 
                     <div className="grid  md:p-10 w-full md:grid-cols-2 xl:grid-cols-4 gap-8">
-                        {teamMembers.map((member) => (
+                        {teamMembers.map((member, i) => (
                             <Card
                                 key={member.name}
-                                className="group mx-12 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden"
+                                className={`group mx-12 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden transform duration-700 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <div className="relative">
                                     <div className="aspect-square overflow-hidden">
@@ -188,15 +214,6 @@ export default function AboutPage() {
                                             alt={member.name}
                                             className="w-full h-full object-cover"
                                         />
-                                    </div>
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0"></div>
-                                    <div
-                                        className="absolute bottom-4 left-4 right-4 text-white opacity-0 transform translate-y-2 transition-all duration-500">
-                                        <div className="flex items-center space-x-2 mb-2">
-                                            <Clock className="w-4 h-4"/>
-                                            <span className="text-sm font-medium">{member.experience}</span>
-                                        </div>
                                     </div>
                                 </div>
 

@@ -1,7 +1,6 @@
-"use client";
+'use client';
 import 'mapbox-gl/dist/mapbox-gl.css';
-
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import mapboxgl from "mapbox-gl";
 import {
     MapPin,
@@ -13,16 +12,15 @@ import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import contactImage from "@/components/contacts.jpg";
 
-mapboxgl.accessToken =
-    "pk.eyJ1Ijoidml0YWxpcSIsImEiOiJjbTlidjBhZHUwamVyMm1xMWNpOTdtOHU3In0.pFFBZhqOKneKoVcFfrIiLg";
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_API_KEY;
 
-// ====== Client-only Map Component ======
+// ====== Map Component ======
 interface ClinicMapProps {
     coordinates: [number, number];
     googleMapsLink: string;
 }
 
-function ClinicMap({coordinates, googleMapsLink}: ClinicMapProps) {
+function ClinicMap({coordinates}: ClinicMapProps) {
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
     const mapRef = useRef<mapboxgl.Map | null>(null);
 
@@ -31,19 +29,18 @@ function ClinicMap({coordinates, googleMapsLink}: ClinicMapProps) {
 
         mapRef.current = new mapboxgl.Map({
             container: mapContainerRef.current,
-            style: 'mapbox://styles/mapbox/standard', center: coordinates,
+            style: 'mapbox://styles/mapbox/standard',
+            center: coordinates,
             zoom: 16,
             attributionControl: false,
         });
-
 
         new mapboxgl.Marker({color: "green"})
             .setLngLat(coordinates)
             .addTo(mapRef.current);
 
-
         return () => mapRef.current?.remove();
-    }, [coordinates, googleMapsLink]);
+    }, [coordinates]);
 
     return <div ref={mapContainerRef} className="h-full w-full"/>;
 }
@@ -80,6 +77,26 @@ export default function ContactPage() {
         },
     ];
 
+    const [heroVisible, setHeroVisible] = useState(false);
+    const contactRef = useRef<HTMLDivElement | null>(null);
+    const [contactsVisible, setContactsVisible] = useState(false);
+
+    // Анімація героя одразу після завантаження
+    useEffect(() => {
+        setHeroVisible(true);
+    }, []);
+
+    // Анімація контактних карток при скролі
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setContactsVisible(true);
+                observer.disconnect();
+            }
+        }, {threshold: 0.2});
+        if (contactRef.current) observer.observe(contactRef.current);
+    }, []);
+
     return (
         <div className="min-h-screen bg-white">
             {/* Header Section */}
@@ -89,12 +106,12 @@ export default function ContactPage() {
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
             }}
-                     className=" relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 bg-gradient-to-br flex-col from-lime-50 via-white to-green-50 overflow-hidden">
+                     className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden">
                 <div className="absolute inset-0 bg-black opacity-40"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="space-y-8 col-span-2 text-white">
-
+                    <div
+                        className={`space-y-8 col-span-2 text-white transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
                             Контакт <span className="">Colibri</span>
                         </h1>
@@ -107,13 +124,14 @@ export default function ContactPage() {
             </section>
 
             {/* Contact Cards */}
-            <section className="py-12 bg-white">
+            <section ref={contactRef} className="py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:mb-16">
-                        {contactInfo.map((info) => (
+                        {contactInfo.map((info, i) => (
                             <Card
                                 key={info.title}
-                                className="group shadow-lg bg-white mx-8 md:mx-0 transition-all duration-500 border-0 transform text-center"
+                                className={`group shadow-lg bg-white mx-8 md:mx-0 transition-all duration-700 transform ${contactsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <CardContent className="p-8">
                                     <div
@@ -123,9 +141,9 @@ export default function ContactPage() {
                                     </div>
                                     <h3 className="text-xl font-bold text-gray-900 mb-4">{info.title}</h3>
                                     <div className="space-y-2">
-                                        {info.details.map((detail, i) =>
+                                        {info.details.map((detail, j) =>
                                             info.link ? (
-                                                <p key={i} className="text-gray-600">
+                                                <p key={j} className="text-gray-600">
                                                     <a
                                                         href={info.link}
                                                         target="_blank"
@@ -136,9 +154,7 @@ export default function ContactPage() {
                                                     </a>
                                                 </p>
                                             ) : (
-                                                <p key={i} className="text-gray-600">
-                                                    {detail}
-                                                </p>
+                                                <p key={j} className="text-gray-600">{detail}</p>
                                             )
                                         )}
                                     </div>
@@ -149,17 +165,11 @@ export default function ContactPage() {
 
                     {/* Map Section */}
                     <div className="h-[400px] md:h-[600px] mx-8 rounded-lg relative overflow-hidden shadow-lg">
-                        <ClinicMap
-                            coordinates={clinicCoordinates}
-                            googleMapsLink="https://maps.app.goo.gl/ZfKRJ9yTTsHzcXCP7"
-                        />
-                        <Button onClick={() => {
-
-                        }}
-                                className={' absolute right-2 top-2 bg-lime-600 text-white hover:bg-lime-700 h-10 px-4 cursor-pointer text-sm lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300'}>
+                        <ClinicMap coordinates={clinicCoordinates} googleMapsLink=""/>
+                        <Button
+                            className={'absolute right-2 top-2 bg-lime-600 text-white hover:bg-lime-700 h-10 px-4 cursor-pointer text-sm lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300'}>
                             <a target="_blank" className={'absolute w-full h-full'}
                                href={'https://maps.app.goo.gl/TxLQPMqRmQgLQa8XA'}/> Перейти на карту
-
                         </Button>
                     </div>
                 </div>

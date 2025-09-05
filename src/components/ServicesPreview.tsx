@@ -1,10 +1,8 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState, useRef} from "react";
 import Link from "next/link";
-import {
-    ArrowRight,
-} from "lucide-react";
+import {ArrowRight} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
@@ -45,45 +43,74 @@ const services = [
 ];
 
 export default function ServicesPreview() {
+    const [visible, setVisible] = useState(false);
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            {threshold: 0.2}
+        );
+        if (sectionRef.current) observer.observe(sectionRef.current);
+    }, []);
+
     return (
-        <section className="py-8 md:py-24 bg-white relative overflow-hidden">
+        <section
+            ref={sectionRef}
+            className="py-8 md:py-24 bg-white relative overflow-hidden"
+        >
             <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-lime-50/30"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 {/* Заголовок */}
-                <div className="text-center mb-16">
+                <div
+                    className={`text-center mb-16 transition-all duration-1000 ${
+                        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
+                >
                     <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
                         Комплексний стоматологічний догляд
                         <span className="text-lime-600 block">для будь-яких потреб</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         Від регулярних чисток до повного перетворення усмішки – наша команда
-                        забезпечує персоналізований догляд з використанням сучасних технологій та методик.
+                        забезпечує персоналізований догляд з використанням сучасних
+                        технологій та методик.
                     </p>
                 </div>
 
                 {/* Сітка послуг */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 md:px-0 mb-12">
-                    {services.map((service) => (
+                    {services.map((service, i) => (
                         <Card
                             key={service.title}
-                            className="border-0 bg-white overflow-hidden "
+                            className={`border-0 bg-white overflow-hidden transform transition-all duration-700 ${
+                                visible
+                                    ? "opacity-100 translate-y-0"
+                                    : "opacity-0 translate-y-10"
+                            }`}
+                            style={{transitionDelay: `${i * 200}ms`}}
                         >
-                            <div className="relative">
+                            <div className="relative group">
                                 <div className="aspect-[4/3] overflow-hidden">
                                     <Image
                                         fill
                                         src={service.image}
                                         alt={service.title}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
                                     />
                                 </div>
                                 <div
                                     className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-20`}
                                 ></div>
                             </div>
-                            <CardContent className="p-6">
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 ">
+                            <CardContent className="p-6 group-hover:translate-y-[-4px] transition-all duration-500">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">
                                     {service.title}
                                 </h3>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -99,11 +126,14 @@ export default function ServicesPreview() {
                     <Button
                         asChild
                         size="lg"
-                        className="bg-lime-600 hover:bg-lime-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300"
+                        className="relative bg-lime-600 hover:bg-lime-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 overflow-hidden"
                     >
-                        <Link href="/services">
+                        <Link href="/services" className="relative z-10 flex items-center">
                             Переглянути всі послуги
                             <ArrowRight className="w-5 h-5 ml-2"/>
+                            {/* shimmer ефект */}
+                            <span
+                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000"></span>
                         </Link>
                     </Button>
                 </div>
