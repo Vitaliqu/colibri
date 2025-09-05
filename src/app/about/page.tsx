@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
+import aboutImage from "@/components/about.jpg";
 
 const teamMembers = [
     {
@@ -72,34 +73,43 @@ const values = [
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-white">
+
             {/* Герой-секція */}
-            <section
-                className="relative mt-24 bg-gradient-to-br flex flex-col from-lime-50 via-white to-green-50 overflow-hidden">
-                <div className="absolute inset-0 opacity-30">
+            <section style={{
+                backgroundImage: `url(${aboutImage.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+            }}
+                     className=" relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 bg-gradient-to-br flex-col from-lime-50 via-white to-green-50 overflow-hidden">
+                <div className="absolute inset-0 bg-black opacity-40"></div>
+
+                <div className="absolute inset-0  opacity-30">
                     <div className="w-full flex justify-center h-full" style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2384cc16' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm-20 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/svg%3E")`
                     }}></div>
                 </div>
 
-                <div className="mx-auto max-w-7xl w-auto px-4 lg:px-8 relative">
-                    <div className="grid lg:grid-cols-2 gap-12 py-6 items-center">
+                <div
+                    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="space-y-8 col-span-2 text-white">
                         <div>
-                            <h1 className="text-3xl md:text-6xl font-bold text-gray-900 mb-6">
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
                                 Ваша усмішка — наша
-                                <span className="text-lime-600 block">Пристрасть</span>
+                                <span className=" block">Пристрасть</span>
                             </h1>
-                            <p className="text-sm md:text-xl h-auto text-gray-600 leading-relaxed mb-8">
+                            <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
                                 Вже понад 15 років стоматологічна клініка Колібрі змінює усмішки та життя
                                 завдяки турботливому та сучасному догляду. Наша місія проста:
                                 надавати виняткові стоматологічні послуги у теплій та привітній атмосфері.
                             </p>
-                            <div className="flex flex-col items-center sm:flex-row gap-4">
+                            <div className="flex items-center flex-row gap-4">
                                 <Button
                                     onClick={() => {
                                         const el = document.getElementById("doctors");
                                         if (el) el.scrollIntoView({behavior: "smooth"});
                                     }}
-                                    className="bg-lime-600 cursor-pointer w-min hover:bg-lime-700 text-sm sm:text-base md:text-lg font-semibold shadow-lg text-white px-6 py-3  sm:w-auto"
+                                    className="border-gray-300 bg-white text-gray-700 hover:bg-gray-50 px-8 py-4 text-sm md:text-lg font-semibold group"
                                 >
                                     Познайомитися з нашою командою
                                 </Button>
@@ -107,21 +117,6 @@ export default function AboutPage() {
 
                         </div>
 
-                        <div className="relative">
-                            <div className="aspect-square relative">
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-br from-lime-400 to-green-500 rounded-3xl transform rotate-6 scale-95 opacity-20"></div>
-                                <div className="absolute inset-4 bg-white rounded-3xl shadow-2xl overflow-hidden">
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&h=800&q=80"
-                                        alt="Сучасна стоматологічна клініка"
-                                        fill
-                                        className="object-cover rounded-3xl"
-                                    />
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
+import contactImage from "@/components/contacts.jpg";
 
 mapboxgl.accessToken =
     "pk.eyJ1Ijoidml0YWxpcSIsImEiOiJjbTlidjBhZHUwamVyMm1xMWNpOTdtOHU3In0.pFFBZhqOKneKoVcFfrIiLg";
@@ -82,15 +83,26 @@ export default function ContactPage() {
     return (
         <div className="min-h-screen bg-white">
             {/* Header Section */}
-            <section className="relative mt-24 bg-gradient-to-br from-lime-50 via-white to-green-50 overflow-hidden">
-                <div className="max-w-7xl mt-12 mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                        Контакт <span className="text-lime-600">Colibri</span>
-                    </h1>
-                    <p className="text-l md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10">
-                        Ми готові допомогти вам із будь-якими стоматологічними потребами. Звертайтеся, щоб
-                        записатися на прийом, поставити питання або дізнатися більше про наші послуги.
-                    </p>
+            <section style={{
+                backgroundImage: `url(${contactImage.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+            }}
+                     className=" relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 bg-gradient-to-br flex-col from-lime-50 via-white to-green-50 overflow-hidden">
+                <div className="absolute inset-0 bg-black opacity-40"></div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="space-y-8 col-span-2 text-white">
+
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+                            Контакт <span className="">Colibri</span>
+                        </h1>
+                        <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
+                            Ми готові допомогти вам із будь-якими стоматологічними потребами. Звертайтеся, щоб
+                            записатися на прийом, поставити питання або дізнатися більше про наші послуги.
+                        </p>
+                    </div>
                 </div>
             </section>
 

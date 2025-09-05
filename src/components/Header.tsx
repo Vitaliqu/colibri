@@ -42,10 +42,10 @@ export const Header: React.FC = () => {
     return (
         <header
             className="fixed top-0 left-0 right-0 py-2 bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 transition-all duration-300">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
                 {/* Logo */}
                 <Link href="/home" className="flex items-center space-x-0">
-                    <Image src={logo} alt="Логотип" className="w-20 mb-1"/>
+                    <Image src={logo} alt="Логотип" className="w-16 mb-1"/>
                     <div>
                         <h1 className="text-xl font-bold text-gray-900 leading-tight mb-0">
                             Колібрі

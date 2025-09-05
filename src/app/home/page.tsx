@@ -17,7 +17,7 @@ export default function Home() {
         else window.location.href = "tel:+380968055143";
     };
     return (
-        <div className="overflow-hidden mt-10">
+        <div className="overflow-hidden mt-18">
             <HeroSection/>
             <ServicesPreview/>
 

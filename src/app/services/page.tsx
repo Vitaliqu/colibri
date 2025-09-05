@@ -6,6 +6,7 @@ import {Button} from "@/components/ui/button";
 import {
     Card, CardContent
 } from "@/components/ui/card";
+import servicesImage from "@/components/services.jpg";
 
 const services = [
     {
@@ -56,27 +57,31 @@ export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-white">
             {/* Герой-секція */}
-            <section className="relative py-16 bg-gradient-to-br from-lime-50 via-white to-green-50 overflow-hidden">
-                <div className="absolute inset-0 opacity-30">
-                    <div className="w-full h-full" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2384cc16' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm-20 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/svg%3E")`
-                    }}></div>
-                </div>
+            <section style={{
+                backgroundImage: `url(${servicesImage.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+            }}
+                     className=" relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 bg-gradient-to-br flex-col from-lime-50 via-white to-green-50 overflow-hidden">
+                <div className="absolute inset-0 bg-black opacity-40"></div>
 
-                <div className="max-w-7xl mt-16 md:mt-20 mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-                    <h1 className
-                            ="text-5xl font-bold text-gray-900 mb-6">
-                        <span className="text-lime-600 block">Послуги</span>
-                    </h1>
-                    <p className="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed md:mb-10">
-                        Від рутинного догляду до складних процедур, наша команда забезпечує повний
-                        стоматологічний догляд із використанням новітніх технологій та методик.
-                    </p>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="space-y-8 col-span-2 text-white">
+                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+
+                            <span className=" block">Послуги</span>
+                        </h1>
+                        <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
+                            Від рутинного догляду до складних процедур, наша команда забезпечує повний
+                            стоматологічний догляд із використанням новітніх технологій та методик.
+                        </p>
+                    </div>
                 </div>
             </section>
 
             {/* Сітка послуг */}
-            <section className="bg-white">
+            <section className="bg-white py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 px-8 lg:grid-cols-3 gap-8">
                         {services.map((service) => (
