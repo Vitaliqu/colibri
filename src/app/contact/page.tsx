@@ -60,7 +60,7 @@ export default function ContactPage() {
                 setContactsVisible(true);
                 observer.disconnect();
             }
-        }, {threshold: 0.1});
+        }, {threshold: 0.05});
         if (contactRef.current) observer.observe(contactRef.current);
     }, []);
 
