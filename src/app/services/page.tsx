@@ -100,7 +100,7 @@ export default function ServicesPage() {
             {/* Сітка послуг */}
             <section ref={sectionRef} className="bg-white py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 px-8 lg:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 px-4 lg:grid-cols-3 gap-8">
                         {services.map((service, i) => (
                             <Card
                                 key={service.title}

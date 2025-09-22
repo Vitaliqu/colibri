@@ -51,7 +51,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center text-center px-4 sm:px-6 lg:px-8 relative">
                     <div className="w-full mx-auto flex justify-center flex-col items-center">
-                        <h2 className="text-3xl md:text-5xl font-bold -mt-8 md:mt-16 text-gray-900 mb-6 animate-fade-in">
+                        <h2 className="text-3xl md:text-5xl font-bold mt-6 md:mt-16 text-gray-900 mb-6 mt56 animate-fade-in">
                             Готові трансформувати
                             <span className="text-lime-600 block">свою усмішку?</span>
                         </h2>

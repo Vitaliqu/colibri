@@ -66,7 +66,7 @@ export default function AboutPage() {
                 setTeamVisible(true);
                 observer.disconnect();
             }
-        }, {threshold: 0.2});
+        }, {threshold: 0.05});
         if (teamRef.current) observer.observe(teamRef.current);
     }, []);
 
@@ -102,7 +102,7 @@ export default function AboutPage() {
             {/* Наша команда */}
             <section id={'doctors'} ref={teamRef}
                      className="py-8 md:py-24 flex w-full justify-center items-center bg-gradient-to-br from-lime-50 via-white to-green-50">
-                <div className="max-w-8xl flex flex-col items-center mx-auto md:gap-6 sm:px-6 lg:px-8">
+                <div className="max-w-8xl flex flex-col items-center mx-auto md:gap-6 sm:px-6 px-8">
                     <div
                         className={`text-center mb-8 md:mb-16 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -115,11 +115,11 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="grid  md:p-10 w-full md:grid-cols-2 xl:grid-cols-4 gap-8">
+                    <div className="grid  md:p-10 w-full md:grid-cols-2 xl:grid-cols-4 gap-4">
                         {teamMembers.map((member, i) => (
                             <Card
                                 key={member.name}
-                                className={`group mx-12 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden transform duration-700 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                className={`group mx-2 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden transform duration-700 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <div className="relative">
