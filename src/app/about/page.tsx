@@ -1,21 +1,13 @@
 'use client'
 import React, {useEffect, useState, useRef} from "react";
-import {
-    Award,
-    Users,
-    Heart,
-    Shield,
-} from "lucide-react";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
 import aboutImage from "@/components/about.jpg";
 
 export default function AboutPage() {
     const [heroVisible, setHeroVisible] = useState(false);
     const valuesRef = useRef<HTMLDivElement | null>(null);
     const teamRef = useRef<HTMLDivElement | null>(null);
-    const [valuesVisible, setValuesVisible] = useState(false);
     const [teamVisible, setTeamVisible] = useState(false);
 
     const teamMembers = [
@@ -52,30 +44,6 @@ export default function AboutPage() {
             bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
         }
     ];
-
-    const values = [
-        {
-            icon: Heart,
-            title: "Турботливий догляд",
-            description: "Ми ставимося до кожного пацієнта з емпатією, повагою та розумінням, забезпечуючи комфорт на всьому етапі лікування."
-        },
-        {
-            icon: Shield,
-            title: "Відмінність і безпека",
-            description: "Ми дотримуємося найвищих стандартів стоматології, використовуючи передові технології та суворі протоколи безпеки."
-        },
-        {
-            icon: Users,
-            title: "Орієнтація на пацієнта",
-            description: "Ваші потреби, комфорт та цілі — у центрі всього, що ми робимо, з індивідуальними планами лікування."
-        },
-        {
-            icon: Award,
-            title: "Постійні інновації",
-            description: "Ми залишаємося на передовій стоматологічних технологій та методик, щоб забезпечити найкращі результати."
-        }
-    ];
-
     // Анімація героя одразу після завантаження
     useEffect(() => {
         setHeroVisible(true);
@@ -85,10 +53,9 @@ export default function AboutPage() {
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
-                setValuesVisible(true);
                 observer.disconnect();
             }
-        }, {threshold: 0.2});
+        }, {threshold: 0.1});
         if (valuesRef.current) observer.observe(valuesRef.current);
     }, []);
 
@@ -128,57 +95,6 @@ export default function AboutPage() {
                             завдяки турботливому та сучасному догляду. Наша місія проста:
                             надавати виняткові стоматологічні послуги у теплій та привітній атмосфері.
                         </p>
-                        <div className="flex items-center flex-row gap-4">
-                            <Button
-                                onClick={() => {
-                                    const el = document.getElementById("doctors");
-                                    if (el) el.scrollIntoView({behavior: "smooth"});
-                                }}
-                                className="border-gray-300 bg-white cursor-pointer hover:bg-gray-300 text-gray-700 px-8 py-4 text-sm md:text-lg font-semibold group"
-                            >
-                                Познайомитися з нашою командою
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Наші цінності */}
-            <section ref={valuesRef} className="py-8 md:py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
-                    <div
-                        className={`text-center mb-16 transition-all duration-1000 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                            Наші основні
-                            <span className="text-lime-600"> цінності</span>
-                        </h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                            Ці принципи керують усією нашою роботою та гарантують виняткову турботу для кожного
-                            пацієнта.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {values.map((value, i) => (
-                            <Card
-                                key={value.title}
-                                className={`group mx-12 md:mx-0 bg-white transition-all border-0 transform duration-700 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                                style={{transitionDelay: `${i * 150}ms`}}
-                            >
-                                <CardContent className="p-8  text-center">
-                                    <div
-                                        className="w-16 h-16 bg-gradient-to-br from-lime-100 to-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                        <value.icon className="w-8 h-8 text-lime-600"/>
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-4 ">
-                                        {value.title}
-                                    </h3>
-                                    <p className="text-gray-600 leading-relaxed">
-                                        {value.description}
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        ))}
                     </div>
                 </div>
             </section>

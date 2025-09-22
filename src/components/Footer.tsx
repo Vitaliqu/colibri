@@ -93,16 +93,8 @@ export const Footer: React.FC = () => {
                 <div className="border-t border-gray-700 mt-12 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-400 text-sm">
-                            © 2024 Colibri Стоматологічна клініка. Всі права захищені.
+                            © 2025 Колібрі. Всі права захищені.
                         </p>
-                        <div className="flex space-x-6 mt-4 md:mt-0">
-                            <a href="#" className="text-gray-400 hover:text-lime-300 text-sm transition-colors">Політика
-                                конфіденційності</a>
-                            <a href="#" className="text-gray-400 hover:text-lime-300 text-sm transition-colors">Умови
-                                обслуговування</a>
-                            <a href="#" className="text-gray-400 hover:text-lime-300 text-sm transition-colors">Політика
-                                файлів cookie</a>
-                        </div>
                     </div>
                 </div>
             </div>

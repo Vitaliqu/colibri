@@ -14,7 +14,6 @@ import contactImage from "@/components/contacts.jpg";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_API_KEY;
 
-// ====== Map Component ======
 interface ClinicMapProps {
     coordinates: [number, number];
     googleMapsLink: string;
@@ -45,133 +44,133 @@ function ClinicMap({coordinates}: ClinicMapProps) {
     return <div ref={mapContainerRef} className="h-full w-full"/>;
 }
 
-// ====== Main Page ======
 export default function ContactPage() {
     const clinicCoordinates: [number, number] = [23.30012078, 48.17384617];
-
-    const contactInfo = [
-        {
-            icon: MapPin,
-            title: "Завітайте до нас",
-            details: ["вулиця Пирогова 5а, Хуст, Закарпатська область, Украина, 90400"],
-            link: "https://maps.app.goo.gl/92AYKP2QN2CqbX1x6",
-            color: "from-lime-400 to-green-500",
-        },
-        {
-            icon: Phone,
-            title: "Зателефонуйте нам",
-            details: ["+1 (555) 123-4567"],
-            color: "from-green-400 to-lime-500",
-        },
-        {
-            icon: Mail,
-            title: "Напишіть нам",
-            details: ["info@colibri.dental", "appointments@colibri.dental"],
-            color: "from-lime-500 to-green-400",
-        },
-        {
-            icon: Clock,
-            title: "Години роботи",
-            details: ["Пн-Пт: 8:00 - 18:00", "Сб: 9:00 - 15:00", "Нд: вихідний"],
-            color: "from-green-500 to-lime-400",
-        },
-    ];
-
     const [heroVisible, setHeroVisible] = useState(false);
     const contactRef = useRef<HTMLDivElement | null>(null);
     const [contactsVisible, setContactsVisible] = useState(false);
 
-    // Анімація героя одразу після завантаження
     useEffect(() => {
         setHeroVisible(true);
     }, []);
 
-    // Анімація контактних карток при скролі
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
                 setContactsVisible(true);
                 observer.disconnect();
             }
-        }, {threshold: 0.2});
+        }, {threshold: 0.1});
         if (contactRef.current) observer.observe(contactRef.current);
     }, []);
 
     return (
         <div className="min-h-screen bg-white">
-            {/* Header Section */}
-            <section style={{
-                backgroundImage: `url(${contactImage.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-            }}
-                     className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden">
+            {/* Header */}
+            <section
+                style={{
+                    backgroundImage: `url(${contactImage.src})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+                className="relative min-h-[calc(100vh)] flex items-center overflow-hidden"
+            >
                 <div className="absolute inset-0 bg-black opacity-40"></div>
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div
-                        className={`space-y-8 col-span-2 text-white transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
-                            Контакт <span className="">Colibri</span>
+                        className={`space-y-8 text-white transition-all duration-1000 ${
+                            heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    >
+                        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
+                            Контакти <span className="text-lime-400">Колібрі</span>
                         </h1>
-                        <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
+                        <p className="text-sm md:text-lg leading-relaxed max-w-2xl">
                             Ми готові допомогти вам із будь-якими стоматологічними потребами. Звертайтеся, щоб
-                            записатися на прийом, поставити питання або дізнатися більше про наші послуги.
+                            записатися на прийом або отримати консультацію.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Cards */}
+            {/* Contact Info */}
             <section ref={contactRef} className="py-12 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 md:mb-16">
-                        {contactInfo.map((info, i) => (
-                            <Card
-                                key={info.title}
-                                className={`group shadow-lg bg-white mx-8 md:mx-0 transition-all duration-700 transform ${contactsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                                style={{transitionDelay: `${i * 150}ms`}}
+                <div
+                    className="w-[90%] max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:grid lg:grid-cols-5 gap-8">
+                    {/* Основна інформація */}
+                    <Card
+                        className={`shadow-lg lg:col-span-3 h-[32rem] overflow-hidden transition-all duration-700 transform ${
+                            contactsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    >
+                        <CardContent className="p-0 relative h-full">
+                            <ClinicMap coordinates={clinicCoordinates} googleMapsLink=""/>
+                            <Button
+                                className="absolute right-2 top-2 bg-lime-600 text-white hover:bg-lime-700 shadow-lg"
                             >
-                                <CardContent className="p-8">
-                                    <div
-                                        className={`w-16 h-16 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}
-                                    >
-                                        <info.icon className="w-8 h-8 text-white"/>
-                                    </div>
-                                    <h3 className="text-xl font-bold text-gray-900 mb-4">{info.title}</h3>
-                                    <div className="space-y-2">
-                                        {info.details.map((detail, j) =>
-                                            info.link ? (
-                                                <p key={j} className="text-gray-600">
-                                                    <a
-                                                        href={info.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="hover:underline"
-                                                    >
-                                                        {detail}
-                                                    </a>
-                                                </p>
-                                            ) : (
-                                                <p key={j} className="text-gray-600">{detail}</p>
-                                            )
-                                        )}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
+                                <a
+                                    href="https://maps.app.goo.gl/TxLQPMqRmQgLQa8XA"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="absolute inset-0 w-full h-full"
+                                />
+                                Перейти на карту
+                            </Button>
+                        </CardContent>
+                    </Card>
+                    <Card
+                        className={`shadow-lg col-span-2 h-[32rem] transition-all py-6 duration-700 transform ${
+                            contactsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                        }`}
+                    >
 
-                    {/* Map Section */}
-                    <div className="h-[400px] md:h-[600px] mx-8 rounded-lg relative overflow-hidden shadow-lg">
-                        <ClinicMap coordinates={clinicCoordinates} googleMapsLink=""/>
-                        <Button
-                            className={'absolute right-2 top-2 bg-lime-600 text-white hover:bg-lime-700 h-10 px-4 cursor-pointer text-sm lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300'}>
-                            <a target="_blank" className={'absolute w-full h-full'}
-                               href={'https://maps.app.goo.gl/TxLQPMqRmQgLQa8XA'}/> Перейти на карту
-                        </Button>
-                    </div>
+                        <CardContent className="h-full flex flex-col justify-between">
+                            <div className="flex items-start space-x-3">
+                                <p className="font-semibold text-2xl text-slate-900"> Контактна інформація</p>
+                            </div>
+                            <div className="flex items-start space-x-3">
+                                <Phone className="w-5 h-5 shrink-0 text-lime-600 mt-1"/>
+                                <div>
+                                    <p className="font-medium text-slate-900">Телефон</p>
+                                    <p className="text-slate-600">+1 (555) 123-4567</p>
+                                    <p className="text-slate-500 text-sm">Пн-Пт, 8:00 - 18:00</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start space-x-3">
+                                <Mail className="w-5 shrink-0 h-5 text-lime-600 mt-1"/>
+                                <div>
+                                    <p className="font-medium text-slate-900">Email</p>
+                                    <p className="text-slate-600">info@colibri.dental</p>
+                                    <p className="text-slate-600">appointments@colibri.dental</p>
+                                    <p className="text-slate-500 text-sm">Відповідаємо протягом 24 годин</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start space-x-3">
+                                <MapPin className="w-5 shrink-0 h-5 text-lime-600 mt-1"/>
+                                <div>
+                                    <p className="font-medium text-slate-900">Адреса</p>
+                                    <p className="text-slate-600">
+                                        вулиця Пирогова 5а, Хуст, Закарпатська область, Україна, 90400
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start space-x-3">
+                                <Clock className="w-5 shrink-0 h-5 text-lime-600 mt-1"/>
+                                <div>
+                                    <p className="font-medium text-slate-900">Години роботи</p>
+                                    <p className="text-slate-600">Пн-Пт: 8:00 - 18:00</p>
+                                    <p className="text-slate-600">Сб: 9:00 - 15:00</p>
+                                    <p className="text-slate-600">Нд: вихідний</p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    {/* Карта */}
+
                 </div>
             </section>
         </div>

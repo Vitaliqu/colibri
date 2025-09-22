@@ -13,25 +13,25 @@ export default function ServicesPage() {
     const services = [
         {
             title: "Загальна стоматологія",
-            description: "Повний догляд за здоров’ям порожнини рота для всієї родини",
+            description: "Комплексний догляд за зубами та яснами для дорослих і дітей",
             image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&h=400&q=80",
             treatments: ["Професійна чистка", "Пломби", "Лікування кореневих каналів", "Видалення зубів", "Лікування ясен"],
         },
         {
             title: "Косметична стоматологія",
-            description: "Покращте усмішку за допомогою сучасних естетичних процедур",
+            description: "Сучасні естетичні рішення для створення ідеальної усмішки: від відбілювання до повної трансформації.",
             image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&h=400&q=80",
             treatments: ["Відбілювання зубів", "Вініри з порцеляни", "Бондинг", "Мейковери усмішки", "Корекція ясен"],
         },
         {
             title: "Ортодонтія",
-            description: "Випрямлення зубів за допомогою сучасних ортодонтичних рішень",
+            description: "Ефективне та комфортне вирівнювання зубів із застосуванням прозорих кап і брекет-систем нового покоління.",
             image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&h=400&q=80",
             treatments: ["Прозорі капи", "Традиційні брекети", "Ретейнери", "Корекція прикусу", "Ортодонтія для дорослих"],
         },
         {
             title: "Хірургія порожнини рота",
-            description: "Спеціалізовані хірургічні процедури з точністю та турботою",
+            description: "Безпечні хірургічні втручання з використанням сучасних методик та з особливою увагою до вашого комфорту.",
             image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=600&h=400&q=80",
             treatments: ["Імпланти", "Видалення зубів мудрості", "Кісткова пластика", "Сінус-ліфти", "Операції на щелепі"],
         },
@@ -42,10 +42,10 @@ export default function ServicesPage() {
             treatments: ["Професійна чистка", "Фторування", "Секрети зубів", "Скринінг на рак порожнини рота", "Рентген"],
         },
         {
-            title: "Екстрена допомога",
-            description: "Негайна стоматологічна допомога, коли вона потрібна найбільше",
+            title: "Протезування",
+            description: "Відновлення функціональності та естетики зубного ряду за допомогою сучасних протезів.",
             image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Полегшення зубного болю", "Відновлення зламаного зуба", "Заміна пломби", "Травми зубів", "Післяробоча допомога"],
+            treatments: ["Знімні протези", "Бюгельні протези", "Коронки", "Мостоподібні конструкції", "Імплант-протези"]
         }
     ];
 
@@ -63,7 +63,7 @@ export default function ServicesPage() {
                     observer.disconnect();
                 }
             },
-            {threshold: 0.2}
+            {threshold: 0.1}
         );
         if (sectionRef.current) observer.observe(sectionRef.current);
     }, []);
@@ -89,8 +89,9 @@ export default function ServicesPage() {
                             <span className="block">Послуги</span>
                         </h1>
                         <p className="text-sm md:text-xl mt-2 leading-relaxed mb-8">
-                            Від рутинного догляду до складних процедур, наша команда забезпечує повний
-                            стоматологічний догляд із використанням новітніх технологій та методик.
+                            Ми пропонуємо повний спектр стоматологічних послуг — від профілактики до складних операцій.
+                            Сучасне обладнання та досвід наших лікарів гарантують безпеку, ефективність і комфорт
+                            кожного пацієнта.
                         </p>
                     </div>
                 </div>
@@ -124,17 +125,13 @@ export default function ServicesPage() {
                                         <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Процедури
                                             включають:</h4>
                                         <ul className="space-y-2">
-                                            {service.treatments.slice(0, 3).map((treatment) => (
+                                            {service.treatments.map((treatment) => (
                                                 <li key={treatment}
                                                     className="flex items-center text-sm text-gray-600 transition-all duration-300 hover:text-lime-600">
                                                     <CheckCircle className="w-4 h-4 text-lime-600 mr-2 flex-shrink-0"/>
                                                     {treatment}
                                                 </li>
                                             ))}
-                                            {service.treatments.length > 3 && (
-                                                <li className="text-sm text-gray-500 italic">+{service.treatments.length - 3} інших
-                                                    процедур...</li>
-                                            )}
                                         </ul>
                                     </div>
                                 </CardContent>
@@ -156,20 +153,19 @@ export default function ServicesPage() {
 
                 <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Готові розпочати
-                        <span className="block">свою стоматологічну подорож?</span>
+                        Подбайте про свою усмішку
+                        <span className="block">вже сьогодні</span>
                     </h2>
                     <p className="text-lg opacity-90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Запишіться на консультацію сьогодні та отримайте персоналізований
-                        стоматологічний догляд, який ставить комфорт та здоров’я на перше місце.
+                        Запишіться зараз і довірте свій комфорт та усмішку професіоналам.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button
                             onClick={() => window.location.href = "tel:+380968055143"}
-                            className="w-full py-2 text-sm hover:bg-lime-500 hover:text-white text-gray-900 transition-all duration-300 bg-white border border-lime-600 shadow-lg hover:shadow-2xl hover:scale-105"
+                            className="w-full py-2 text-sm hover:bg-lime-500 hover:text-white cursor-pointer text-gray-900 transition-all duration-300 bg-white border border-lime-600 shadow-lg hover:shadow-2xl hover:scale-102"
                         >
-                            <div className="flex cursor-pointer items-center justify-center gap-2">
+                            <div className="flex items-center justify-center gap-2">
                                 <Phone className="w-4 h-4"/>+380 96-80-55-143
                             </div>
                         </Button>
