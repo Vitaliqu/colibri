@@ -71,7 +71,7 @@ export default function ContactPage() {
                 style={{
                     backgroundImage: `url(${contactImage.src})`,
                     backgroundSize: "cover",
-                    backgroundPosition: "center",
+                    backgroundPosition: "left center",
                 }}
                 className="relative min-h-[calc(100vh)] flex items-center overflow-hidden"
             >
