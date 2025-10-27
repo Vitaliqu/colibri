@@ -4,14 +4,14 @@ import {Footer} from "@/components/Footer";
 import type {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "Стоматологія Колібрі у Хусті | Лікування, імплантація, протезування",
+    title: "Стоматологія Колібрі у Хусті",
     alternates: {
         canonical: "https://kolibri-khust.com",
     },
     description:
-        "Стоматологія Колібрі у Хусті — сучасна клініка з професійним лікуванням зубів. Імплантація, протезування, гігієна, дитяча стоматологія. Запишіться онлайн!",
+        "Стоматологія Колібрі у Хусті — сучасна клініка з професійним лікуванням зубів. Імплантація, протезування, гігієна, дитяча стоматологія.",
     openGraph: {
-        title: "Стоматологія Колібрі у Хусті | Лікування зубів, імплантація, протезування",
+        title: "Стоматологія Колібрі у Хусті",
         url: "https://kolibri-khust.com",
         description:
             "Стоматологія Колібрі у Хусті — професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія. Турбота про вашу усмішку.",
@@ -19,6 +19,9 @@ export const metadata: Metadata = {
         images: ["https://kolibri-khust.com/og-image.jpg"],
         locale: "uk_UA",
         type: "website",
+    },
+    icons: {
+        apple: "../../public/logo.png", // <-- тут ваша іконка
     },
     twitter: {
         card: "summary_large_image",
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="uk">
-        
+
         <body className={'font-sans'}>
         <main className="">
             <Header/>
