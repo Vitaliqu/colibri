@@ -4,28 +4,36 @@ import {Footer} from "@/components/Footer";
 import type {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "Стоматологія Колібрі",
-    description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
+    title: "Стоматологія Колібрі у Хусті | Лікування, імплантація, протезування",
+    alternates: {
+        canonical: "https://kolibri-khust.com",
+    },
+    description:
+        "Стоматологія Колібрі у Хусті — сучасна клініка з професійним лікуванням зубів. Імплантація, протезування, гігієна, дитяча стоматологія. Запишіться онлайн!",
     openGraph: {
-        title: "Стоматологія Колібрі | Хуст",
+        title: "Стоматологія Колібрі у Хусті | Лікування зубів, імплантація, протезування",
         url: "https://kolibri-khust.com",
-        description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
+        description:
+            "Стоматологія Колібрі у Хусті — професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія. Турбота про вашу усмішку.",
         siteName: "Стоматологія Колібрі",
-        images: ["https://colibri-9jo4.vercel.app/og-image.jpg"],
+        images: ["https://kolibri-khust.com/og-image.jpg"],
         locale: "uk_UA",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
+        title: "Стоматологія Колібрі у Хусті",
+        description:
+            "Сучасна стоматологічна клініка у Хусті. Професійне лікування зубів, імплантація, протезування та дитяча стоматологія.",
         images: ["https://kolibri-khust.com/og-image.jpg"],
-    }
+    },
 };
+
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
-        <html lang="en">
-
+        <html lang="uk">
+        
         <body className={'font-sans'}>
         <main className="">
             <Header/>

@@ -46,13 +46,13 @@ export default function HeroSection() {
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-3 mt-20 gap-6 items-center">
                     <div className="space-y-8 col-span-2 text-white">
-                        <h1
+                        <div
                             className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg opacity-0 animate-fade-in"
                         >
                             Ваша ідеальна
                             <span className="block animate-fade-in-delay">Усмішка</span>
                             <span className="animate-fade-in-delay2">чекає на вас</span>
-                        </h1>
+                        </div>
 
                         <p
                             className="text-lg leading-relaxed max-w-lg drop-shadow-sm opacity-0 animate-fade-in-delay3"

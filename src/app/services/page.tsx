@@ -91,9 +91,9 @@ export default function ServicesPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div
                         className={`space-y-8 text-white transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+                        <div className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
                             <span className="block">Послуги</span>
-                        </h1>
+                        </div>
                         <p className="text-sm md:text-xl mt-2 leading-relaxed mb-8">
                             Ми пропонуємо повний спектр стоматологічних послуг — від профілактики до складних операцій.
                             Сучасне обладнання та досвід наших лікарів гарантують безпеку, ефективність і комфорт

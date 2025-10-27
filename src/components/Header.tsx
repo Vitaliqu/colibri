@@ -47,9 +47,9 @@ export const Header: React.FC = () => {
                 <Link href="/home" className="flex items-center space-x-0">
                     <Image src={logo} alt="Логотип" className="w-16 mb-1"/>
                     <div>
-                        <h1 className="text-xl font-bold text-gray-900 leading-tight mb-0">
+                        <div className="text-xl font-bold text-gray-900 leading-tight mb-0">
                             Колібрі
-                        </h1>
+                        </div>
                         <p className="text-lg text-lime-600 font-medium leading-tight mt-0">
                             Легко і точно
                         </p>

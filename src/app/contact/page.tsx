@@ -82,9 +82,9 @@ export default function ContactPage() {
                             heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                         }`}
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold drop-shadow-lg">
+                        <div className="text-4xl md:text-6xl font-bold drop-shadow-lg">
                             Контакти <span className="text-lime-400">Колібрі</span>
-                        </h1>
+                        </div>
                         <p className="text-sm md:text-lg leading-relaxed max-w-2xl">
                             Ми готові допомогти вам із будь-якими стоматологічними потребами. Звертайтеся, щоб
                             записатися на прийом або отримати консультацію.

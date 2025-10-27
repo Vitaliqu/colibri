@@ -1,8 +1,19 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
     images: {
-        domains: ['images.unsplash.com'],
+        domains: ["images.unsplash.com"],
+    },
+
+    async redirects() {
+        return [
+            {
+                source: "/:path*",
+                has: [{type: "host", value: "www.kolibri-khust.com"}],
+                destination: "https://kolibri-khust.com/:path*",
+                permanent: true,
+            },
+        ];
     },
 };
 
