@@ -19,7 +19,7 @@ const services = [
     {
         title: "Косметична стоматологія",
         description:
-            "Покращте свою усмішку за допомогою вінірів, відбілювання та естетичних процедур.",
+            "Покращте свою усмішку за допомогою відбілювання, вінірів та естетичної корекція ясен.",
         image:
             "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=400&h=300&q=80",
         color: "from-green-400 to-lime-500",
@@ -27,19 +27,11 @@ const services = [
     {
         title: "Ортодонтія",
         description:
-            "Вирівнювання зубів за допомогою традиційних брекетів та сучасних прозорих кап.",
+            "Вирівнювання зубів дорослим і дітям за допомогою брекет-техніки, трейнерів, пластинок та елайнерів.",
         image:
             "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=400&h=300&q=80",
         color: "from-lime-500 to-green-400",
-    },
-    {
-        title: "Екстрена допомога",
-        description:
-            "Негайна стоматологічна допомога у разі потреби, доступна того ж дня.",
-        image:
-            "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=400&h=300&q=80",
-        color: "from-green-500 to-lime-400",
-    },
+    }
 ];
 
 export default function ServicesPreview() {
@@ -80,12 +72,15 @@ export default function ServicesPreview() {
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         Від регулярних чисток до повного перетворення усмішки – наша команда
                         забезпечує персоналізований догляд з використанням сучасних
-                        технологій та методик.
+                        технологій та методик. А наявность у клініці стоматологічного мікроскопу,
+                        п&#39;єзотому, діодного лазера, інтраорального сканера Medit 700i та багато
+                        інших сучасних інструментів та матеріалів дозволяє вирішувати
+                        найскладніші завдання.
                     </p>
                 </div>
 
                 {/* Сітка послуг */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 md:px-0 mb-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-0 mb-12">
                     {services.map((service, i) => (
                         <Card
                             key={service.title}

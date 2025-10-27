@@ -1,20 +1,12 @@
 import React from "react";
-import Link from "next/link";
 import {MapPin, Phone, Mail, Clock} from "lucide-react";
-
-const navigationItems = [
-    {title: "Головна", url: "/"},
-    {title: "Послуги", url: "/services"},
-    {title: "Про нас", url: "/about"},
-    {title: "Контакти", url: "/contact"}
-];
 
 export const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-900 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-lime-900 opacity-90"></div>
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Бренд */}
                     <div>
                         <div className="flex items-center space-x-3 mb-6">
@@ -29,22 +21,6 @@ export const Footer: React.FC = () => {
                         </p>
                     </div>
 
-                    {/* Швидкі посилання */}
-                    <div>
-                        <h4 className="text-lg font-semibold mb-6 text-lime-300">Швидкі посилання</h4>
-                        <ul className="space-y-3">
-                            {navigationItems.map((item) => (
-                                <li key={item.title}>
-                                    <Link
-                                        href={item.url}
-                                        className="text-gray-300 hover:text-lime-300 transition-colors duration-200"
-                                    >
-                                        {item.title}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
 
                     {/* Послуги */}
                     <div>

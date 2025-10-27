@@ -132,8 +132,7 @@ export default function ContactPage() {
                                 <Phone className="w-5 h-5 shrink-0 text-lime-600 mt-1"/>
                                 <div>
                                     <p className="font-medium text-slate-900">Телефон</p>
-                                    <p className="text-slate-600">+1 (555) 123-4567</p>
-                                    <p className="text-slate-500 text-sm">Пн-Пт, 8:00 - 18:00</p>
+                                    <p className="text-slate-600">+380968055446</p>
                                 </div>
                             </div>
 
@@ -161,8 +160,8 @@ export default function ContactPage() {
                                 <Clock className="w-5 shrink-0 h-5 text-lime-600 mt-1"/>
                                 <div>
                                     <p className="font-medium text-slate-900">Години роботи</p>
-                                    <p className="text-slate-600">Пн-Пт: 8:00 - 18:00</p>
-                                    <p className="text-slate-600">Сб: 9:00 - 15:00</p>
+                                    <p className="text-slate-600">Пн-Пт: 8:00 - 20:00</p>
+                                    <p className="text-slate-600">Сб: 9:00 - 16:00</p>
                                     <p className="text-slate-600">Нд: вихідний</p>
                                 </div>
                             </div>

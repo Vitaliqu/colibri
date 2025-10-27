@@ -3,6 +3,8 @@ import React, {useEffect, useState, useRef} from "react";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
 import aboutImage from "@/components/about.jpg";
+import Svetlana from "../../components/Viktoria.jpg";
+import Olexander from "../../components/Olexander.jpg";
 
 export default function AboutPage() {
     const [heroVisible, setHeroVisible] = useState(false);
@@ -12,36 +14,25 @@ export default function AboutPage() {
 
     const teamMembers = [
         {
-            name: "Д-р Марія Мартінес",
-            role: "Головний стоматолог та засновниця",
-            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&h=400&q=80",
-            experience: "15+ років",
-            specialties: ["Загальна стоматологія", "Косметичні процедури"],
-            bio: "Д-р Мартінес заснувала Colibri Dental з баченням зробити стоматологічну допомогу комфортною та доступною для всіх."
+            name: "Олександр Щербан",
+            role: "Головний лікар і власник кліники",
+            image: Olexander,
+            specialties: ["Хірургія", "Ортопедія"],
+            bio: "Закінчив стомат факультет Донецького медичного університету, досвід, наполегливість іпостійне навчання."
         },
         {
-            name: "Д-р Джеймс Вілсон",
+            name: "Ольга Щербан",
             role: "Ортодонт",
             image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
-            experience: "12+ років",
-            specialties: ["Ортодонтія", "Прозорі елайнери"],
-            bio: "Спеціаліст із сучасних ортодонтичних методів лікування з акцентом на дорослих та підлітків."
+            specialties: ["дитяча стоматологія", "Ортодонтія"],
+            bio: "Закінчила стомат факультет Донецького медичного університету, любить вирівнювати зуби і кататися на велосипеді. За сумісництвом, дружина головного лікаря."
         },
         {
-            name: "Д-р Сара Чен",
+            name: "Юлія Химишинець",
             role: "Щелепно-лицевий хірург",
-            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
-            experience: "10+ років",
-            specialties: ["Щелепно-лицева хірургія", "Дентальні імпланти"],
-            bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
-        },
-        {
-            name: "Д-awр Сара Чен",
-            role: "Щелепно-лицевий хірург",
-            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
-            experience: "10+ років",
-            specialties: ["Щелепно-лицева хірургія", "Дентальні імпланти"],
-            bio: "Хірург із сертифікацією, що спеціалізується на складних процедурах дентальної імплантації та реконструктивній хірургії."
+            image: Svetlana,
+            specialties: ["Парадонтолог", "Ендоентист"],
+            bio: "Закінчила стоматфакультет Ужгородського університету , полюбляє працювати під мікроскопом і відбілювати зуби."
         }
     ];
     // Анімація героя одразу після завантаження
@@ -91,9 +82,13 @@ export default function AboutPage() {
                             <span className="block">Пристрасть</span>
                         </h1>
                         <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
-                            Вже понад 15 років стоматологічна клініка Колібрі змінює усмішки та життя
-                            завдяки турботливому та сучасному догляду. Наша місія проста:
-                            надавати виняткові стоматологічні послуги у теплій та привітній атмосфері.
+                            Вже понад 6 років стоматологічна клініка Колібрі змінює усмішки
+                            та життя завдяки турботливому та сучасному лікуванню. Нашамісія проста: надавати виняткові
+                            стоматологічні послуги у теплійта привітній атмосфері. Тому всі наші лікарі працюють з
+                            3хкратним, або 5-ти кратним збільшенням і якісним освітленнямфірми &#34;Univet&#34;, що
+                            дозволяє
+                            підняти якість послуг на принципововищий рівень. Також усі лікарі проходять
+                            періодичнестоматологічне навчання у кращих лекторів Європи та України.
                         </p>
                     </div>
                 </div>
@@ -104,7 +99,7 @@ export default function AboutPage() {
                      className="py-8 md:py-24 flex w-full justify-center items-center bg-gradient-to-br from-lime-50 via-white to-green-50">
                 <div className="max-w-8xl flex flex-col items-center mx-auto md:gap-6 sm:px-6 px-8">
                     <div
-                        className={`text-center mb-8 md:mb-16 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        className={`text-center mb-8 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                             Познайомтеся з нашою
                             <span className="text-lime-600"> командою</span>
@@ -115,7 +110,7 @@ export default function AboutPage() {
                         </p>
                     </div>
 
-                    <div className="grid  md:p-10 w-full md:grid-cols-2 xl:grid-cols-4 gap-4">
+                    <div className="grid  md:p-10 w-full md:grid-cols-2 xl:grid-cols-3 gap-8">
                         {teamMembers.map((member, i) => (
                             <Card
                                 key={member.name}
@@ -123,7 +118,7 @@ export default function AboutPage() {
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <div className="relative">
-                                    <div className="aspect-square overflow-hidden">
+                                    <div className="aspect-6/7 overflow-hidden">
                                         <Image
                                             fill
                                             src={member.image}

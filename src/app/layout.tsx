@@ -4,13 +4,14 @@ import {Footer} from "@/components/Footer";
 import type {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: "Colibri Dental Clinic",
-    description: "Modern dental clinic website built with Next.js",
+    title: "Стоматологія Колібрі",
+    description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
 };
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="en">
+
         <body className={'font-sans'}>
         <main className="">
             <Header/>

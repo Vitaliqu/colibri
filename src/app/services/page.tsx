@@ -15,37 +15,43 @@ export default function ServicesPage() {
             title: "Загальна стоматологія",
             description: "Комплексний догляд за зубами та яснами для дорослих і дітей",
             image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Професійна чистка", "Пломби", "Лікування кореневих каналів", "Видалення зубів", "Лікування ясен"],
+            treatments: ["Професійна чистка", "Пломбування зубів", "Лікування кореневих каналів", "Переліковування раніше лікованих кореневих каналів", "Використання стоматологічного мікроскопу"],
         },
         {
             title: "Косметична стоматологія",
             description: "Сучасні естетичні рішення для створення ідеальної усмішки: від відбілювання до повної трансформації.",
             image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Відбілювання зубів", "Вініри з порцеляни", "Бондинг", "Мейковери усмішки", "Корекція ясен"],
+            treatments: ["Відбілювання зубів", "Попереднє проектування посмішки", "Вініри", "Естетична корекція ясен"],
         },
         {
             title: "Ортодонтія",
-            description: "Ефективне та комфортне вирівнювання зубів із застосуванням прозорих кап і брекет-систем нового покоління.",
+            description: "Ефективне та комфортне вирівнювання зубів дорослим і дітям завдяки сучасним методам.",
             image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Прозорі капи", "Традиційні брекети", "Ретейнери", "Корекція прикусу", "Ортодонтія для дорослих"],
+            treatments: ["Традиційні брекети, в тому числі самоліговані", "Трейнери", "Хайрекси", "Ортодонтичні мікроімпланти", "Пластинки"],
         },
         {
             title: "Хірургія порожнини рота",
-            description: "Безпечні хірургічні втручання з використанням сучасних методик та з особливою увагою до вашого комфорту.",
+            description: "Безпечні хірургічні втручання з особливою увагою до вашого комфорту.",
             image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Імпланти", "Видалення зубів мудрості", "Кісткова пластика", "Сінус-ліфти", "Операції на щелепі"],
+            treatments: ["Видалення ретинованих зубів", "Видалення зубів мудрості", "Пластика вуздечки язика і губ", "Ясневі пластики", "Резекції і кістектомії", "Використання п'єзотому"],
         },
         {
-            title: "Профілактика",
-            description: "Підтримуйте здоров’я порожнини рота за допомогою профілактичних процедур",
+            title: "Лікування ясен, парадонтологія",
+            description: "Підтримуйте здоров’я ясен та гігієну порожнини рота",
             image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Професійна чистка", "Фторування", "Секрети зубів", "Скринінг на рак порожнини рота", "Рентген"],
+            treatments: ["Професійна гігієнічна чистка зубів", "Складання парадонтологічної карти", "Під'яснева чистка зубів з використанням гліцину", "Кюретаж кишень з допомогою кюрет Грейсі", "Використання стоматологічного лазера", "Парадонтологічні операції", "Диспансерний облік"],
         },
         {
             title: "Протезування",
-            description: "Відновлення функціональності та естетики зубного ряду за допомогою сучасних протезів.",
+            description: "Відновлення функціональності та повернення естетики і впевненості.",
             image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=400&q=80",
-            treatments: ["Знімні протези", "Бюгельні протези", "Коронки", "Мостоподібні конструкції", "Імплант-протези"]
+            treatments: ["Мікропротезування", "Протезування на імплантах", "Використання e-max, оксиду циркона", "Адгезивна фіксація коронок, вінірів, вкладок", "Попереднє планування протезування з можливістю візуалізації", "Використання внутрішньоротового бездротового сканера Megit 700i"]
+        },
+        {
+            title: "Імплантація",
+            description: "Це дивовижна можливість знайти колись втрачене, відновити зубний ряд не псуючи сусідніх зубів, або викинути ваш знімний протез і повернути радість життя.",
+            image: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=600&h=400&q=80",
+            treatments: ["Імлантаційна система преміального рівня MIS V3, або середнього MIS C1", "Хірургічні шаблони для точного встановлення імплантів", `Операції для збільшення об'єму кістки, матеріали фірми "OsteoBiol"`, "Використання п'єзотому", `Використання борів "Densah"`, "Збільшення об'єму ясни", "Створення зони прикріпленої кератинізованої ясни"]
         }
     ];
 
@@ -101,7 +107,7 @@ export default function ServicesPage() {
             <section ref={sectionRef} className="bg-white py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 px-4 lg:grid-cols-3 gap-8">
-                        {services.map((service, i) => (
+                        {services.slice(0, 3).map((service, i) => (
                             <Card
                                 key={service.title}
                                 className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
@@ -137,6 +143,46 @@ export default function ServicesPage() {
                                 </CardContent>
                             </Card>
                         ))}
+
+                    </div>
+                    <div className="grid md:grid-cols-2 px-4 lg:grid-cols-4 py-16 gap-4">
+                        {services.slice(3).map((service, i) => (
+                            <Card
+                                key={service.title}
+                                className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                style={{transitionDelay: `${i * 150}ms`}}
+                            >
+                                <div className="relative">
+                                    <div className="aspect-[3/2] overflow-hidden">
+                                        <Image
+                                            fill
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                    </div>
+                                </div>
+
+                                <CardContent className="p-8 group-hover:translate-y-[-4px] transition-all duration-500">
+                                    <h3 className="md:text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
+                                    <div className="space-y-3 mb-6">
+                                        <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Процедури
+                                            включають:</h4>
+                                        <ul className="space-y-2">
+                                            {service.treatments.map((treatment) => (
+                                                <li key={treatment}
+                                                    className="flex items-center text-sm text-gray-600 transition-all duration-300 hover:text-lime-600">
+                                                    <CheckCircle className="w-4 h-4 text-lime-600 mr-2 flex-shrink-0"/>
+                                                    {treatment}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+
                     </div>
                 </div>
             </section>
