@@ -132,7 +132,7 @@ export default function ContactPage() {
                                 <Phone className="w-5 h-5 shrink-0 text-lime-600 mt-1"/>
                                 <div>
                                     <p className="font-medium text-slate-900">Телефон</p>
-                                    <p className="text-slate-600">+380968055446</p>
+                                    <p className="text-slate-600">+380 96-80-55-446</p>
                                 </div>
                             </div>
 

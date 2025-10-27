@@ -14,7 +14,7 @@ export default function HeroSection() {
 
     const handlePhoneClick = () => {
         if (!isPhoneOpen) setIsPhoneOpen(true);
-        else window.location.href = "tel:+380968055143";
+        else window.location.href = "tel:+380968055446";
     };
 
     useEffect(() => {
@@ -90,7 +90,7 @@ export default function HeroSection() {
                             >
                                 {isPhoneOpen ? (
                                     <div className="flex items-center justify-center gap-2">
-                                        <Phone className="w-5 h-5"/> +380 96-80-55-143
+                                        <Phone className="w-5 h-5"/> +380 96-80-55-446
                                     </div>
                                 ) : (
                                     "Записатися на прийом"

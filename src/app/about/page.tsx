@@ -5,6 +5,7 @@ import {Card, CardContent} from "@/components/ui/card";
 import aboutImage from "@/components/about.jpg";
 import Svetlana from "../../components/Viktoria.jpg";
 import Olexander from "../../components/Olexander.jpg";
+import Olga from "../../components/Olga.jpg";
 
 export default function AboutPage() {
     const [heroVisible, setHeroVisible] = useState(false);
@@ -23,7 +24,7 @@ export default function AboutPage() {
         {
             name: "Ольга Щербан",
             role: "Ортодонт",
-            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&h=400&q=80",
+            image: Olga,
             specialties: ["дитяча стоматологія", "Ортодонтія"],
             bio: "Закінчила стомат факультет Донецького медичного університету, любить вирівнювати зуби і кататися на велосипеді. За сумісництвом, дружина головного лікаря."
         },

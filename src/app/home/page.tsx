@@ -14,7 +14,7 @@ export default function Home() {
 
     const handlePhoneClick = () => {
         if (!isPhoneOpen) setIsPhoneOpen(true);
-        else window.location.href = "tel:+380968055143";
+        else window.location.href = "tel:+380968055446";
     };
 
     // ефект появи при скролі
@@ -57,7 +57,7 @@ export default function Home() {
                         </h2>
                         <p className="text-sm text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay">
                             Запишіться на консультацію сьогодні та дізнайтеся, чому тисячі пацієнтів
-                            довіряють Colibri Dental для свого догляду за порожниною рота.
+                            довіряють Колібрі.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center md:mb-12">
@@ -71,7 +71,7 @@ export default function Home() {
                             >
                                 {isPhoneOpen ? (
                                     <div className="flex items-center justify-center gap-2">
-                                        <Phone className="w-5 h-5"/>+380 96-80-55-143
+                                        <Phone className="w-5 h-5"/>+380 96-80-55-446
                                     </div>
                                 ) : "Записатися на прийом"}
                             </Button>

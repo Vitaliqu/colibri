@@ -208,11 +208,11 @@ export default function ServicesPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button
-                            onClick={() => window.location.href = "tel:+380968055143"}
+                            onClick={() => window.location.href = "tel:+380968055446"}
                             className="w-full py-2 text-sm hover:bg-lime-500 hover:text-white cursor-pointer text-gray-900 transition-all duration-300 bg-white border border-lime-600 shadow-lg hover:shadow-2xl hover:scale-102"
                         >
                             <div className="flex items-center justify-center gap-2">
-                                <Phone className="w-4 h-4"/>+380 96-80-55-143
+                                <Phone className="w-4 h-4"/>+380 96-80-55-446
                             </div>
                         </Button>
                     </div>

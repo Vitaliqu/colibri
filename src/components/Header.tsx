@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
 
     const handlePhoneClick = () => {
         if (!isPhoneOpen) setIsPhoneOpen(true);
-        else window.location.href = "tel:+380968055143";
+        else window.location.href = "tel:+380968055446";
     };
 
     return (
@@ -88,7 +88,7 @@ export const Header: React.FC = () => {
                         }`}
                     >
                         {isPhoneOpen ? <div className="flex items-center justify-center gap-2">
-                            <Phone className="w-4 h-4"/>+380 96-80-55-143
+                            <Phone className="w-4 h-4"/>+380 96-80-55-446
                         </div> : "Записатися на прийом"}
                     </Button>
                 </div>
@@ -145,7 +145,7 @@ export const Header: React.FC = () => {
                             >
                                 {isPhoneOpen ? (
                                     <div className="flex items-center  justify-center gap-2">
-                                        <Phone className="w-4 h-4"/>+380 96-80-55-143
+                                        <Phone className="w-4 h-4"/>+380 96-80-55-446
                                     </div>
                                 ) : (
                                     "Записатися на прийом"

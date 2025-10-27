@@ -29,9 +29,10 @@ export const Footer: React.FC = () => {
                             <li>Загальна стоматологія</li>
                             <li>Косметична стоматологія</li>
                             <li>Ортодонтія</li>
-                            <li>Хірургія ротової порожнини</li>
-                            <li>Профілактичний догляд</li>
-                            <li>Екстрена допомога</li>
+                            <li>Хірургія порожнини рота</li>
+                            <li>Лікування ясен, парадонтологія</li>
+                            <li>Протезування</li>
+                            <li>Імплантація</li>
                         </ul>
                     </div>
 
@@ -42,13 +43,13 @@ export const Footer: React.FC = () => {
                             <div className="flex items-start space-x-3">
                                 <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0"/>
                                 <div>
-                                    <p>вул. Стоматологічна, 123</p>
-                                    <p>Місто Здоров’я, HC 12345</p>
+                                    <p>вулиця Пирогова 5а, </p>
+                                    <p>Хуст, Закарпатська область, Україна, 90400</p>
                                 </div>
                             </div>
                             <div className="flex items-center space-x-3">
                                 <Phone className="w-5 h-5 text-lime-400"/>
-                                <span>+1 (555) 123-4567</span>
+                                <span>+380 96-80-55-446</span>
                             </div>
                             <div className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 text-lime-400"/>
@@ -57,8 +58,8 @@ export const Footer: React.FC = () => {
                             <div className="flex items-start space-x-3">
                                 <Clock className="w-5 h-5 text-lime-400 mt-0.5"/>
                                 <div>
-                                    <p>Пн-Пт: 08:00 - 18:00</p>
-                                    <p>Сб: 09:00 - 15:00</p>
+                                    <p>Пн-Пт: 8:00 - 20:00</p>
+                                    <p>Сб: 09:00 - 16:00</p>
                                     <p>Нд: Вихідний</p>
                                 </div>
                             </div>
