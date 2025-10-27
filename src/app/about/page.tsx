@@ -7,11 +7,13 @@ import Svetlana from "../../components/Viktoria.jpg";
 import Olexander from "../../components/Olexander.jpg";
 import Olga from "../../components/Olga.jpg";
 
+
 export default function AboutPage() {
     const [heroVisible, setHeroVisible] = useState(false);
     const valuesRef = useRef<HTMLDivElement | null>(null);
     const teamRef = useRef<HTMLDivElement | null>(null);
     const [teamVisible, setTeamVisible] = useState(false);
+
 
     const teamMembers = [
         {
