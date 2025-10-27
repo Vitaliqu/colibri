@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
     openGraph: {
         title: "Стоматологія Колібрі | Хуст",
-        url: "https://colibri-9jo4.vercel.app",
+        url: "https://kolibri-khust.com",
         description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
         siteName: "Стоматологія Колібрі",
         images: ["https://colibri-9jo4.vercel.app/og-image.jpg"],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         description: "Стоматологія Колібрі у Хусті — сучасна клініка з турботою про вашу усмішку. Професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія!",
-        images: ["https://colibri-9jo4.vercel.app/og-image.jpg"],
+        images: ["https://kolibri-khust.com/og-image.jpg"],
     }
 };
 
