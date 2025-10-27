@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         siteName: "Стоматологія Колібрі",
         images: [
             {
-                url: '../components/clinic.jpg',
+                url: '../components/fake.jpg',
                 width: 1200,
                 height: 630,
                 alt: "Стоматологія Колібрі — сучасна клініка у Хусті",
