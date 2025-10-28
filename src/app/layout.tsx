@@ -36,11 +36,11 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="uk">
         <head>
-            <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
-            <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-            <link rel="shortcut icon" href="/favicon.ico"/>
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-            <link rel="manifest" href="/site.webmanifest"/>
+            <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon-96x96.png" sizes="96x96"/>
+            <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg"/>
+            <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"/>
+            <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png"/>
+            <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest"/>
             {/* ✅ Structured data for Google (LocalBusiness) */}
             <Script
                 id="schema-localbusiness"
@@ -51,8 +51,6 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
                         "@context": "https://schema.org",
                         "@type": "LocalBusiness",
                         name: "Стоматологія Колібрі",
-                        image: "https://kolibri-khust.com/logo.png",
-                        logo: "https://kolibri-khust.com/favicon.ico",
                         url: "https://kolibri-khust.com",
                         telephone: "+380968055446",
                         email: "info@colibri.dental",
