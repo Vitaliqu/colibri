@@ -1,24 +1,30 @@
-export default function sitemap() {
-    const baseUrl = "https://kolibri-khust.com";
+import {MetadataRoute} from 'next'
 
+export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: `${baseUrl}/`,
+            url: 'https://kolibri-khust.com',
             lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 1.0,
+            changeFrequency: 'yearly',
+            priority: 1,
         },
         {
-            url: `${baseUrl}/about`,
+            url: 'https://kolibri-khust.com/about',
             lastModified: new Date(),
-            changeFrequency: "yearly",
+            changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/services`,
+            url: 'https://kolibri-khust.com/services',
             lastModified: new Date(),
-            changeFrequency: "yearly",
-            priority: 0.8,
+            changeFrequency: 'weekly',
+            priority: 0.5,
         },
-    ];
+        {
+            url: 'https://kolibri-khust.com/contact',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.5,
+        },
+    ]
 }
