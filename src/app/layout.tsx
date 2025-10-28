@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         type: "website",
     },
     icons: {
-        icon: "/favicon.ico",
+        icon: 'favicon.ico',
         apple: "/apple-touch-icon.png",
     },
     twitter: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         title: "Стоматологія Колібрі у Хусті",
         description:
             "Сучасна стоматологічна клініка у Хусті. Професійне лікування зубів, імплантація, протезування та дитяча стоматологія.",
-        images: ["https://kolibri-khust.com/logo.png"],
+        images: ["https://kolibri-khust.com/favicon.ico"],
     },
 };
 
@@ -38,11 +38,6 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="uk">
         <head>
-            {/* ✅ Favicons */}
-            <link rel="icon" href="/favicon.ico" sizes="any"/>
-            <link rel="icon" type="image/png" sizes="32x32" href="/logo.png"/>
-            <link rel="icon" type="image/png" sizes="16x16" href="/logo.png"/>
-
             {/* ✅ Structured data for Google (LocalBusiness) */}
             <Script
                 id="schema-localbusiness"
@@ -53,7 +48,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
                         "@type": "LocalBusiness",
                         name: "Стоматологія Колібрі",
                         image: "https://kolibri-khust.com/logo.png",
-                        logo: "https://kolibri-khust.com/logo.png",
+                        logo: "https://kolibri-khust.com/favicon.ico",
                         url: "https://kolibri-khust.com",
                         telephone: "+380968055446",
                         email: "info@colibri.dental",
