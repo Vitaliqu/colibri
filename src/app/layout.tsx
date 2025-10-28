@@ -6,6 +6,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
     title: "Стоматологія Колібрі у Хусті",
+    metadataBase: new URL("https://kolibri-khust.com/"),
     alternates: {
         canonical: "https://kolibri-khust.com",
     },
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Стоматологія Колібрі у Хусті",
         url: "https://kolibri-khust.com",
+        images: {
+            url: 'opengraph-image.png'
+        },
         description:
             "Стоматологія Колібрі у Хусті — професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія. Турбота про вашу усмішку.",
         siteName: "Стоматологія Колібрі",
