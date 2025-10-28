@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         type: "website",
     },
     icons: {
-        icon: 'favicon.ico',
+        icon: '../../public/favicon.ico',
         apple: "/apple-touch-icon.png",
     },
     twitter: {
@@ -42,7 +42,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <Script
                 id="schema-localbusiness"
                 type="application/ld+json"
-                
+
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
