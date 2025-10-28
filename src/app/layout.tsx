@@ -39,7 +39,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="uk">
         <head>
-            <link rel="icon" href="/favicon.ico"/>
+            <link rel="icon" href="favicon.ico?" type="image/x-icon"/>
             {/* ✅ Structured data for Google (LocalBusiness) */}
             <Script
                 id="schema-localbusiness"
