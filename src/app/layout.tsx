@@ -42,6 +42,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <Script
                 id="schema-localbusiness"
                 type="application/ld+json"
+                
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
