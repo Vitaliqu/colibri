@@ -24,9 +24,6 @@ export const metadata: Metadata = {
         locale: "uk_UA",
         type: "website",
     },
-    icons: {
-        icon: '/favicon.ico',
-    },
     twitter: {
         card: "summary_large_image",
         title: "Стоматологія Колібрі у Хусті",
@@ -39,7 +36,11 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
         <html lang="uk">
         <head>
-            <link rel="icon" href="/favicon.ico?" type="image/x-icon"/>
+            <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"/>
+            <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+            <link rel="shortcut icon" href="/favicon.ico"/>
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+            <link rel="manifest" href="/site.webmanifest"/>
             {/* ✅ Structured data for Google (LocalBusiness) */}
             <Script
                 id="schema-localbusiness"
