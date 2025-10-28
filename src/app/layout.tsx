@@ -17,20 +17,14 @@ export const metadata: Metadata = {
         description:
             "Стоматологія Колібрі у Хусті — професійне лікування зубів, імплантація, протезування, гігієна та дитяча стоматологія. Турбота про вашу усмішку.",
         siteName: "Стоматологія Колібрі",
-        images: ["https://kolibri-khust.com/og-image.png"],
         locale: "uk_UA",
         type: "website",
-    },
-    icons: {
-        icon: '../../public/favicon.ico',
-        apple: "/apple-touch-icon.png",
     },
     twitter: {
         card: "summary_large_image",
         title: "Стоматологія Колібрі у Хусті",
         description:
             "Сучасна стоматологічна клініка у Хусті. Професійне лікування зубів, імплантація, протезування та дитяча стоматологія.",
-        images: ["https://kolibri-khust.com/favicon.ico"],
     },
 };
 
