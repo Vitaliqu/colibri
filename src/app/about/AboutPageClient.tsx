@@ -59,7 +59,7 @@ export default function AboutPageClient() {
                 <section style={{
                     backgroundImage: `url(${aboutImage.src})`,
                     backgroundSize: "cover",
-                    backgroundPosition: "center",
+                    backgroundPosition: "right center",
                     backgroundRepeat: "no-repeat",
                 }}
                          className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden">

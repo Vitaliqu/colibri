@@ -20,14 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
             url: `${siteUrl}/services`,
             title: pageTitle,
             description: pageDescription,
-            images: [
-                {
-                    url: ogImage,
-                    width: 1200,
-                    height: 630,
-                    alt: "Послуги стоматології Колібрі у Хусті",
-                },
-            ],
+            images: [{
+                url: "https://kolibri-khust.com/opengraph-image.png}",
+                width: 1200,
+                height: 630,
+                alt: "Стоматологія Колібрі"
+            }],
+
             locale: "uk_UA",
             siteName: "Стоматологія Колібрі | Хуст",
         },
