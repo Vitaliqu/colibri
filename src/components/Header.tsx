@@ -15,7 +15,7 @@ import {
     SheetDescription,
     SheetClose,
 } from "@/components/ui/sheet";
-import logo from "../components/logo.png";
+import logo from "./images/logo.png";
 
 const navigationItems = [
     {title: "Головна", url: "/"},

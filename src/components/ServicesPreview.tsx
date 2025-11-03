@@ -6,30 +6,30 @@ import {ArrowRight} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
+import cosmetic from "./images/cosmetic.webp"
+import orthodental from "./images/orthodental.webp"
+import general from "./images/general.webp"
 
 const services = [
     {
         title: "Загальна стоматологія",
         description:
             "Комплексний догляд за ротовою порожниною, включаючи чистки, пломби та профілактичні процедури.",
-        image:
-            "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=400&h=300&q=80",
+        image: general,
         color: "from-lime-400 to-green-500",
     },
     {
         title: "Косметична стоматологія",
         description:
             "Покращте свою усмішку за допомогою відбілювання, вінірів та естетичної корекція ясен.",
-        image:
-            "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=400&h=300&q=80",
+        image: cosmetic,
         color: "from-green-400 to-lime-500",
     },
     {
         title: "Ортодонтія",
         description:
             "Вирівнювання зубів дорослим і дітям за допомогою брекет-техніки, трейнерів, пластинок та елайнерів.",
-        image:
-            "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=400&h=300&q=80",
+        image: orthodental,
         color: "from-lime-500 to-green-400",
     }
 ];
@@ -84,11 +84,7 @@ export default function ServicesPreview() {
                     {services.map((service, i) => (
                         <Card
                             key={service.title}
-                            className={`border-0 bg-white overflow-hidden transform transition-all duration-700 ${
-                                visible
-                                    ? "opacity-100 translate-y-0"
-                                    : "opacity-0 translate-y-10"
-                            }`}
+                            className={`border-0 bg-white overflow-hidden transform -all duration-700`}
                             style={{transitionDelay: `${i * 200}ms`}}
                         >
                             <div className="relative group">
@@ -97,7 +93,7 @@ export default function ServicesPreview() {
                                         fill
                                         src={service.image}
                                         alt={service.title}
-                                        className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                                        className="w-full h-full object-cover transform transition-transform"
                                     />
                                 </div>
                                 <div

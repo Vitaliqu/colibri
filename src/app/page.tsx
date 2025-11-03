@@ -79,7 +79,7 @@ export default function Home() {
                                 }`}
                             >
                                 {isPhoneOpen ? (
-                                    <div className="flex items-center justify-center gap-2">
+                                    <div className="flex items-center  justify-center gap-2">
                                         <Phone className="w-5 h-5"/>+380 96-80-55-446
                                     </div>
                                 ) : (

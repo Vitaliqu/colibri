@@ -2,8 +2,8 @@
 
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
-import clinicImage from "./clinic.jpg";
-import aboutImageFake from "./fake.jpg";
+import clinicImage from "./images/clinic.webp";
+import aboutImageFake from "./images/fake.webp";
 
 import {ArrowRight, Phone} from "lucide-react";
 import {Button} from "@/components/ui/button";
@@ -82,14 +82,14 @@ export default function HeroSection() {
 
                             <Button
                                 onClick={handlePhoneClick}
-                                className={`h-10 px-6 text-lg lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300 ${
+                                className={`h-10 px-6 text-lg lg:text-lg cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ${
                                     isPhoneOpen
-                                        ? "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300 animate-pulse-slow"
+                                        ? "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"
                                         : "bg-lime-600 border-gray-300 text-white hover:bg-lime-700"
                                 }`}
                             >
                                 {isPhoneOpen ? (
-                                    <div className="flex items-center justify-center gap-2">
+                                    <div className="flex items-center cursor-pointer justify-center gap-2">
                                         <Phone className="w-5 h-5"/> +380 96-80-55-446
                                     </div>
                                 ) : (
