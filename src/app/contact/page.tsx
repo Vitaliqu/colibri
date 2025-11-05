@@ -1,5 +1,5 @@
 import type {Metadata} from "next";
-import ContactPageClient from "./СontactPageClient";
+import ContactPageClient from "./ContactPageClient";
 
 const pageTitle = "Контакти – Стоматологія Колібрі | Хуст";
 const pageDescription =
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
             description: pageDescription,
 
             images: [{
-                url: "https://kolibri-khust.com/opengraph-image.png}",
+                url: "https://kolibri-khust.com/opengraph-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Стоматологія Колібрі"

@@ -21,16 +21,15 @@ export default function ServicesPageClient() {
 
     const services = [
         {
-            title: "Загальна стоматологія",
+            title: "Загальна стоматологія та ендодонтія",
             description:
                 "Комплексний догляд за зубами та яснами для дорослих і дітей.",
             image: general,
             treatments: [
                 "Професійна чистка",
                 "Пломбування зубів",
-                "Лікування кореневих каналів",
+                "Лікування кореневих каналів під мікроскопом",
                 "Переліковування раніше лікованих каналів",
-                "Використання стоматологічного мікроскопу",
             ],
         },
         {
@@ -65,7 +64,7 @@ export default function ServicesPageClient() {
             image: surgery,
             treatments: [
                 "Видалення зубів мудрості",
-                "Пластика вуздечки",
+                "Пластика вуздечки язика і губ",
                 "Резекції і кістектомії",
                 "П'єзохірургія",
             ],
@@ -73,7 +72,7 @@ export default function ServicesPageClient() {
         {
             title: "Пародонтологія",
             description:
-                "Підтримуйте здоров’я ясен і профілактику пародонтозу.",
+                "Підтримуйте здоров’я ясен та гігієну порожнини рота.",
             image: paradent,
             treatments: [
                 "Професійна чистка",
@@ -160,7 +159,7 @@ export default function ServicesPageClient() {
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <div className="relative">
-                                    <div className="aspect-[3/2] overflow-hidden">
+                                    <div className="relative aspect-[3/2] overflow-hidden">
                                         <Image
                                             fill
                                             src={service.image}
@@ -199,7 +198,7 @@ export default function ServicesPageClient() {
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <div className="relative">
-                                    <div className="aspect-[3/2] overflow-hidden">
+                                    <div className="relative aspect-[3/2] overflow-hidden">
                                         <Image
                                             fill
                                             src={service.image}

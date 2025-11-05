@@ -57,8 +57,8 @@ export default function HeroSection() {
                         <p
                             className="text-lg leading-relaxed max-w-lg drop-shadow-sm opacity-0 animate-fade-in-delay3"
                         >
-                            Отримайте дбайливий та комплексний стоматологічний догляд, який ставить
-                            ваш комфорт на перше місце
+                            Отримайте дбайливий та комплексний стоматологічний догляд, де якість стоїть на першому
+                            місті.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-delay4">

@@ -139,8 +139,7 @@ export default function ContactPageClient() {
                                 <Mail className="w-5 shrink-0 h-5 text-lime-600 mt-1"/>
                                 <div>
                                     <p className="font-medium text-slate-900">Email</p>
-                                    <p className="text-slate-600">info@colibri.dental</p>
-                                    <p className="text-slate-600">appointments@colibri.dental</p>
+                                    <p className="text-slate-600">kolibri.khust@gmail.com</p>
                                     <p className="text-slate-500 text-sm">Відповідаємо протягом 24 годин</p>
                                 </div>
                             </div>

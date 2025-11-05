@@ -12,7 +12,7 @@ import general from "./images/general.webp"
 
 const services = [
     {
-        title: "Загальна стоматологія",
+        title: "Загальна стоматологія та ендодонтія",
         description:
             "Комплексний догляд за ротовою порожниною, включаючи чистки, пломби та профілактичні процедури.",
         image: general,
@@ -88,7 +88,7 @@ export default function ServicesPreview() {
                             style={{transitionDelay: `${i * 200}ms`}}
                         >
                             <div className="relative group">
-                                <div className="aspect-[4/3] overflow-hidden">
+                                <div className="relative aspect-[4/3] overflow-hidden">
                                     <Image
                                         fill
                                         src={service.image}

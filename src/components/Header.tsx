@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-0">
-                    <Image src={logo} alt="Логотип" className="w-16 mb-1"/>
+                    <Image src={logo} alt="Логотип" priority className="w-16 mb-1"/>
                     <div>
                         <div className="text-xl font-bold text-gray-900 leading-tight mb-0">
                             Колібрі
@@ -153,7 +153,7 @@ export const Header: React.FC = () => {
                             </Button>
                             <div className="text-center text-sm text-gray-600 flex flex-col items-center gap-1">
                                 <div className="flex items-center gap-2">
-                                    <Mail className="w-4 h-4"/>info@colibri.dental
+                                    <Mail className="w-4 h-4"/>kolibri.khust@gmail.com
                                 </div>
                             </div>
                         </div>

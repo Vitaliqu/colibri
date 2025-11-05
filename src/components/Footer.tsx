@@ -26,11 +26,11 @@ export const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-lg font-semibold mb-6 text-lime-300">Послуги</h4>
                         <ul className="space-y-3 text-gray-300">
-                            <li>Загальна стоматологія</li>
+                            <li>Загальна стоматологія та ендодонтія</li>
                             <li>Косметична стоматологія</li>
                             <li>Ортодонтія</li>
                             <li>Хірургія порожнини рота</li>
-                            <li>Лікування ясен, парадонтологія</li>
+                            <li>Пародонтологія</li>
                             <li>Протезування</li>
                             <li>Імплантація</li>
                         </ul>
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
                             </div>
                             <div className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 text-lime-400"/>
-                                <span>info@colibri.dental</span>
+                                <span>kolibri.khust@gmail.com</span>
                             </div>
                             <div className="flex items-start space-x-3">
                                 <Clock className="w-5 h-5 text-lime-400 mt-0.5"/>
