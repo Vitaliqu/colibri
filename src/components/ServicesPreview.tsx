@@ -6,8 +6,8 @@ import {ArrowRight} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
-import cosmetic from "./images/cosmetic.webp"
-import orthodental from "./images/orthodental.webp"
+import cosmetic from "./images/cosmetic.jpg"
+import orthodental from "./images/orthodental.jpg"
 import general from "./images/general.webp"
 
 const services = [
@@ -96,9 +96,6 @@ export default function ServicesPreview() {
                                         className="w-full h-full object-cover transform transition-transform"
                                     />
                                 </div>
-                                <div
-                                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-20`}
-                                ></div>
                             </div>
                             <CardContent className="p-6 group-hover:translate-y-[-4px] transition-all duration-500">
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">

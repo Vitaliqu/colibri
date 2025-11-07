@@ -6,7 +6,7 @@ import mapboxgl from "mapbox-gl";
 import {MapPin, Phone, Mail, Clock} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
-import contactImage from "@/components/images/contacts.webp";
+import contactImage from "@/components/images/contacts.jpg";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_API_KEY ?? "";
 

@@ -3,10 +3,10 @@
 import React, {useEffect, useState, useRef} from "react";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
-import aboutImage from "@/components/images/about.webp";
-import Svetlana from "@/components/images/Viktoria.webp";
-import Olexander from "@/components/images/Olexander.webp";
-import Olga from "@/components/images/Olga.webp";
+import aboutImage from "@/components/images/about.jpg";
+import Svetlana from "@/components/images/Viktoria.jpg";
+import Olexander from "@/components/images/Olexander.jpg";
+import Olga from "@/components/images/Olga.jpg";
 
 export default function AboutPageClient() {
     const [heroVisible, setHeroVisible] = useState(false);
@@ -19,20 +19,20 @@ export default function AboutPageClient() {
             role: "Головний лікар і власник кліники",
             image: Olexander,
             specialties: ["Хірургія", "Ортопедія"],
-            bio: "Закінчив стомат факультет Донецького медичного університету, досвід, наполегливість іпостійне навчання.",
+            bio: "Закінчив стомат факультет Донецького медичного університету, досвід, наполегливість і постійне навчання.",
         },
         {
             name: "Ольга Щербан",
             role: "Ортодонт",
             image: Olga,
-            specialties: ["Дитяча стоматологія", "Ортодонтія"],
+            specialties: ["Дитяча стоматологія", "Корекція положення зубів дорослих і дітей"],
             bio: "Закінчила стомат факультет Донецького медичного університету, любить вирівнювати зуби і кататися на велосипеді. За сумісництвом, дружина головного лікаря.",
         },
         {
             name: "Юлія Химишинець",
-            role: "Щелепно-лицевий хірург",
+            role: "Парадонтолог, ендоентіст",
             image: Svetlana,
-            specialties: ["Парадонтолог", "Ендоентіст"],
+            specialties: ["Лікування ясен", "Терапія кореневих каналів під мікроскопом"],
             bio: "Закінчила стоматфакультет Ужгородського університету, полюбляє працювати під мікроскопом і відбілювати зуби.",
         },
     ];
@@ -89,21 +89,17 @@ export default function AboutPageClient() {
 
                 {/* Наша команда */}
                 <section id={'doctors'} ref={teamRef}
-                         className="py-8 md:py-24 flex w-full justify-center items-center bg-gradient-to-br from-lime-50 via-white to-green-50">
+                         className="py-8 md:py-16 flex w-full justify-center items-center bg-gradient-to-br from-lime-50 via-white to-green-50">
                     <div className="max-w-8xl flex flex-col items-center mx-auto md:gap-6 sm:px-6 px-8">
                         <div
-                            className={`text-center mb-8 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                            className={`text-center transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                                 Познайомтеся з нашою
                                 <span className="text-lime-600"> командою</span>
                             </h2>
-                            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                                Наші досвідчені фахівці віддані наданню виняткової стоматологічної допомоги з ніжним та
-                                індивідуальним підходом.
-                            </p>
                         </div>
 
-                        <div className="grid mx-12 md:p-10 w-full md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <div className="grid mx-12 md:p-6 w-full md:grid-cols-2 xl:grid-cols-3 gap-8">
                             {teamMembers.map((member, i) => (
                                 <Card
                                     key={member.name}
@@ -111,12 +107,12 @@ export default function AboutPageClient() {
                                     style={{transitionDelay: `${i * 150}ms`}}
                                 >
                                     <div className="relative">
-                                        <div className="relative aspect-6/7 overflow-hidden">
+                                        <div className="relative aspect-3/4 overflow-hidden">
                                             <Image
                                                 fill
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-top object-cover"
                                             />
                                         </div>
                                     </div>

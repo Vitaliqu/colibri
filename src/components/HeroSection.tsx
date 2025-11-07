@@ -2,8 +2,8 @@
 
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
-import clinicImage from "./images/clinic.webp";
-import aboutImageFake from "./images/fake.webp";
+import clinicImage from "./images/clinic.jpg";
+import aboutImageFake from "./images/fake.png";
 
 import {ArrowRight, Phone} from "lucide-react";
 import {Button} from "@/components/ui/button";
