@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: pageTitle,
             description: pageDescription,
             images: [{
-                url: "https://kolibri-khust.com/opengraph-image.pngs",
+                url: "https://kolibri-khust.com/opengraph-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Стоматологія Колібрі"
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: pageTitle,
             description: pageDescription,
             images: [{
-                url: "https://kolibri-khust.com/opengraph-image.pngs",
+                url: "https://kolibri-khust.com/about-opengraph-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Стоматологія Колібрі"
