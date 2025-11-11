@@ -3,10 +3,10 @@
 import React, {useEffect, useState, useRef} from "react";
 import Image from "next/image";
 import {Card, CardContent} from "@/components/ui/card";
-import aboutImage from "@/components/images/about.jpg";
-import Svetlana from "@/components/images/Viktoria.jpg";
-import Olexander from "@/components/images/Olexander.jpg";
-import Olga from "@/components/images/Olga.jpg";
+import aboutImage from "@/components/images/about.webp";
+import Svetlana from "@/components/images/Viktoria.webp";
+import Olexander from "@/components/images/Olexander.webp";
+import Olga from "@/components/images/Olga.webp";
 
 export default function AboutPageClient() {
     const [heroVisible, setHeroVisible] = useState(false);
@@ -18,14 +18,14 @@ export default function AboutPageClient() {
             name: "Олександр Щербан",
             role: "Головний лікар і власник кліники",
             image: Olexander,
-            specialties: ["Хірургія", "Ортопедія"],
+            specialties: ["Хірургія", "Протезування"],
             bio: "Закінчив стомат факультет Донецького медичного університету, досвід, наполегливість і постійне навчання.",
         },
         {
             name: "Ольга Щербан",
             role: "Ортодонт",
             image: Olga,
-            specialties: ["Дитяча стоматологія", "Корекція положення зубів дорослих і дітей"],
+            specialties: ["Дитяча стоматологія", "Корекція положення зубів у дорослих і дітей"],
             bio: "Закінчила стомат факультет Донецького медичного університету, любить вирівнювати зуби і кататися на велосипеді. За сумісництвом, дружина головного лікаря.",
         },
         {
@@ -63,7 +63,7 @@ export default function AboutPageClient() {
                     backgroundRepeat: "no-repeat",
                 }}
                          className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden">
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
+                    <div className="absolute inset-0 bg-black opacity-25"></div>
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <div

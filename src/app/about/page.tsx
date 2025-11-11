@@ -6,7 +6,6 @@ const pageDescription =
     "Дізнайтеся більше про команду Стоматології Колібрі у Хусті. Наші лікарі — професіонали з багаторічним досвідом у лікуванні, протезуванні та імплантації зубів.";
 
 const siteUrl = "https://kolibri-khust.com";
-const ogImage = `${siteUrl}/opengraph-image.png`;
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -21,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: pageTitle,
             description: pageDescription,
             images: [{
-                url: "https://kolibri-khust.com/opengraph-image.png}",
+                url: "https://kolibri-khust.com/opengraph-image.pngs",
                 width: 1200,
                 height: 630,
                 alt: "Стоматологія Колібрі"
@@ -34,7 +33,12 @@ export async function generateMetadata(): Promise<Metadata> {
             card: "summary_large_image",
             title: pageTitle,
             description: pageDescription,
-            images: [ogImage],
+            images: [{
+                url: "https://kolibri-khust.com/opengraph-image.pngs",
+                width: 1200,
+                height: 630,
+                alt: "Стоматологія Колібрі"
+            }],
         },
     };
 }

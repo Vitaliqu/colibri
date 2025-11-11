@@ -12,7 +12,6 @@ const pageDescription =
     "Нд: вихідний.";
 
 const siteUrl = "https://kolibri-khust.com";
-const ogImage = `${siteUrl}/opengraph-image.png`;
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -41,7 +40,12 @@ export async function generateMetadata(): Promise<Metadata> {
             card: "summary_large_image",
             title: pageTitle,
             description: pageDescription,
-            images: [ogImage],
+            images: [{
+                url: "https://kolibri-khust.com/opengraph-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Стоматологія Колібрі"
+            }],
         },
     };
 }

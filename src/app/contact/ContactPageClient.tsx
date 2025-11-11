@@ -6,7 +6,7 @@ import mapboxgl from "mapbox-gl";
 import {MapPin, Phone, Mail, Clock} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
-import contactImage from "@/components/images/contacts.jpg";
+import contactImage from "@/components/images/contacts.webp";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_API_KEY ?? "";
 
@@ -71,7 +71,7 @@ export default function ContactPageClient() {
                 }}
                 className="relative min-h-[calc(100vh)] flex items-center overflow-hidden"
             >
-                <div className="absolute inset-0 bg-black opacity-40"></div>
+                <div className="absolute inset-0 bg-black opacity-15"></div>
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div
                         className={`space-y-8 text-white transition-all duration-1000 ${

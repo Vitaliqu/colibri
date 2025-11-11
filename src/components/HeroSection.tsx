@@ -2,8 +2,8 @@
 
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
-import clinicImage from "./images/clinic.jpg";
-import aboutImageFake from "./images/fake.png";
+import clinicImage from "./images/clinic.webp";
+import aboutImageFake from "./images/fake.webp";
 
 import {ArrowRight, Phone} from "lucide-react";
 import {Button} from "@/components/ui/button";
@@ -23,7 +23,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative min-h-[calc(100vh-4.5rem)] flex items-center overflow-hidden">
+        <section className="relative mt-18 min-h-[calc(100vh-4.5rem)] flex items-center overflow-hidden">
 
             {/* Заднє фото */}
             <div
@@ -40,7 +40,7 @@ export default function HeroSection() {
             ></div>
 
             {/* Темний градієнт */}
-            <div className="absolute inset-0 bg-black/50"></div>
+            <div className="absolute inset-0 bg-black/25"></div>
 
             {/* Контент */}
             <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

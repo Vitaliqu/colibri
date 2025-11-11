@@ -1,7 +1,18 @@
 import React from "react";
 import {MapPin, Phone, Mail, Clock} from "lucide-react";
+import ServiceLink from "@/components/ServiceLink";
 
 export const Footer: React.FC = () => {
+    const services = [
+        {name: "Загальна стоматологія та ендодонтія", id: 1},
+        {name: "Косметична стоматологія", id: 2},
+        {name: "Ортодонтія", id: 3},
+        {name: "Хірургія порожнини рота", id: 4},
+        {name: "Лікування ясен, парадонтологія", id: 5},
+        {name: "Протезування", id: 6},
+        {name: "Імплантація", id: 7},
+    ];
+
     return (
         <footer className="bg-gray-900 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-lime-900 opacity-90"></div>
@@ -17,7 +28,7 @@ export const Footer: React.FC = () => {
                         </div>
                         <p className="text-gray-300 leading-relaxed">
                             Ваша усмішка — наша пристрасть. Отримайте професійний стоматологічний догляд з турботою та
-                            індивідуальним підходом, щоб кожен візит був комфортним та без стресу.
+                            індивідуальним підходом, щоб кожен візит був комфортним та плідним.
                         </p>
                     </div>
 
@@ -26,13 +37,11 @@ export const Footer: React.FC = () => {
                     <div>
                         <h4 className="text-lg font-semibold mb-6 text-lime-300">Послуги</h4>
                         <ul className="space-y-3 text-gray-300">
-                            <li>Загальна стоматологія та ендодонтія</li>
-                            <li>Косметична стоматологія</li>
-                            <li>Ортодонтія</li>
-                            <li>Хірургія порожнини рота</li>
-                            <li>Пародонтологія</li>
-                            <li>Протезування</li>
-                            <li>Імплантація</li>
+                            {services.map((service) => (
+                                <li key={service.name}>
+                                    <ServiceLink targetId={`${service.id}`}>{service.name}</ServiceLink>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 

@@ -6,15 +6,15 @@ import {ArrowRight} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
-import cosmetic from "./images/cosmetic.jpg"
-import orthodental from "./images/orthodental.jpg"
+import cosmetic from "./images/cosmetic.webp"
+import orthodental from "./images/orthodental.webp"
 import general from "./images/general.webp"
 
 const services = [
     {
         title: "Загальна стоматологія та ендодонтія",
         description:
-            "Комплексний догляд за ротовою порожниною, включаючи чистки, пломби та профілактичні процедури.",
+            "Комплексний догляд за ротовою порожниною, включає гігієнічні чистки, пломби та профілактичні процедури.",
         image: general,
         color: "from-lime-400 to-green-500",
     },

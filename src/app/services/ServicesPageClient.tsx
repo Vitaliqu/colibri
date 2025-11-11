@@ -5,14 +5,15 @@ import Image from "next/image";
 import {CheckCircle, Phone} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent} from "@/components/ui/card";
-import servicesImage from "@/components/images/services.jpg";
+import servicesImage from "@/components/images/services.webp";
 import general from "@/components/images/general.webp";
-import cosmetic from "@/components/images/cosmetic.jpg";
+import cosmetic from "@/components/images/cosmetic.webp";
 import paradent from "@/components/images/paradent.webp";
 import surgery from "@/components/images/surgery.webp";
-import orthodental from "@/components/images/orthodental.jpg";
+import orthodental from "@/components/images/orthodental.webp";
 import implant from "@/components/images/implant.webp";
 import prosthesis from "@/components/images/prosthesis.webp";
+import {useSearchParams} from 'next/navigation';
 
 export default function ServicesPageClient() {
     const [heroVisible, setHeroVisible] = useState(false);
@@ -21,6 +22,7 @@ export default function ServicesPageClient() {
 
     const services = [
         {
+            id: '1',
             title: "Загальна стоматологія та ендодонтія",
             description:
                 "Комплексний догляд за зубами та яснами для дорослих і дітей.",
@@ -34,6 +36,7 @@ export default function ServicesPageClient() {
             ],
         },
         {
+            id: '2',
             title: "Косметична стоматологія",
             description:
                 "Сучасні естетичні рішення для створення ідеальної усмішки: від відбілювання до повної трансформації.",
@@ -46,6 +49,7 @@ export default function ServicesPageClient() {
             ],
         },
         {
+            id: '3',
             title: "Ортодонтія",
             description:
                 "Ефективне та комфортне вирівнювання зубів дорослим і дітям завдяки сучасним методам.",
@@ -60,6 +64,7 @@ export default function ServicesPageClient() {
             ],
         },
         {
+            id: '4',
             title: "Хірургія порожнини рота",
             description:
                 "Безпечні хірургічні втручання з особливою увагою до вашого комфорту.",
@@ -74,6 +79,7 @@ export default function ServicesPageClient() {
             ],
         },
         {
+            id: '5',
             title: "Лікування ясен, парадонтологія",
             description:
                 "Підтримуйте здоров’я ясен та гігієну порожнини рота.",
@@ -89,6 +95,7 @@ export default function ServicesPageClient() {
             ],
         },
         {
+            id: '6',
             title: "Протезування",
             description:
                 "Відновлення функціональності та повернення естетики і впевненості.",
@@ -103,6 +110,7 @@ export default function ServicesPageClient() {
             ],
         },
         {
+            id: '7',
             title: "Імплантація",
             description:
                 "Це дивовижна можливість знайти колись втрачене, відновити зубний ряд не псуючи сусідніх зубів, або викинути ваш знімний протез і повернути радість життя",
@@ -118,7 +126,17 @@ export default function ServicesPageClient() {
             ],
         },
     ];
-
+    const searchParams = useSearchParams();
+    useEffect(() => {
+        const targetId = searchParams.get('scrollTo');
+        if (targetId) {
+            const element = document.getElementById(targetId);
+            if (element) {
+                const top = element.getBoundingClientRect().top + window.scrollY - 128;
+                window.scrollTo({top, behavior: 'smooth'});
+            }
+        }
+    }, [searchParams]);
     // Hero animation
     useEffect(() => setHeroVisible(true), []);
 
@@ -145,7 +163,7 @@ export default function ServicesPageClient() {
                 }}
                 className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden"
             >
-                <div className="absolute inset-0 bg-black opacity-40"></div>
+                <div className="absolute inset-0 bg-black opacity-25"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div
@@ -171,7 +189,8 @@ export default function ServicesPageClient() {
                                 className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
-                                <div className="relative">
+                                <div id={service.id}
+                                     className="relative">
                                     <div className="relative aspect-[3/2] overflow-hidden">
                                         <Image
                                             fill
@@ -210,7 +229,7 @@ export default function ServicesPageClient() {
                                 className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
-                                <div className="relative">
+                                <div id={service.id} className="relative">
                                     <div className="relative aspect-[3/2] overflow-hidden">
                                         <Image
                                             fill
