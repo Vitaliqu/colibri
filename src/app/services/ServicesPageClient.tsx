@@ -182,51 +182,15 @@ export default function ServicesPageClient() {
             {/* Сітка послуг */}
             <section ref={sectionRef} className="bg-white py-16">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 px-4 lg:grid-cols-3 gap-8">
-                        {services.slice(0, 3).map((service, i) => (
+
+                    {/* ЄДИНИЙ ГРІД ДЛЯ МОБІЛОК */}
+                    <div className="grid md:grid-cols-2 gap-8 px-4 lg:hidden">
+                        {services.map((service, i) => (
                             <Card
                                 key={service.title}
-                                className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                                style={{transitionDelay: `${i * 150}ms`}}
-                            >
-                                <div id={service.id}
-                                     className="relative">
-                                    <div className="relative aspect-[3/2] overflow-hidden">
-                                        <Image
-                                            fill
-                                            src={service.image}
-                                            alt={service.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                </div>
-
-                                <CardContent className="p-8 group-hover:translate-y-[-4px] transition-all duration-500">
-                                    <h3 className="md:text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
-                                    <div className="space-y-3 mb-6">
-                                        <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Процедури
-                                            включають:</h4>
-                                        <ul className="space-y-2">
-                                            {service.treatments.map((treatment) => (
-                                                <li key={treatment}
-                                                    className="flex items-center text-sm cursor-default text-gray-600 transition-all duration-300 hover:text-lime-600">
-                                                    <CheckCircle className="w-4 h-4 text-lime-600 mr-2 flex-shrink-0"/>
-                                                    {treatment}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-
-                    </div>
-                    <div className="grid md:grid-cols-2 px-4 lg:grid-cols-4 py-16 gap-4">
-                        {services.slice(3).map((service, i) => (
-                            <Card
-                                key={service.title}
-                                className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${
+                                    servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
                                 style={{transitionDelay: `${i * 150}ms`}}
                             >
                                 <div id={service.id} className="relative">
@@ -241,15 +205,18 @@ export default function ServicesPageClient() {
                                 </div>
 
                                 <CardContent className="p-8 group-hover:translate-y-[-4px] transition-all duration-500">
-                                    <h3 className="md:text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
                                     <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
                                     <div className="space-y-3 mb-6">
-                                        <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Процедури
-                                            включають:</h4>
+                                        <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">
+                                            Процедури включають:
+                                        </h4>
                                         <ul className="space-y-2">
                                             {service.treatments.map((treatment) => (
-                                                <li key={treatment}
-                                                    className="flex items-center text-sm text-gray-600 transition-all duration-300 hover:text-lime-600">
+                                                <li
+                                                    key={treatment}
+                                                    className="flex items-center text-sm text-gray-600 transition-all duration-300 hover:text-lime-600"
+                                                >
                                                     <CheckCircle className="w-4 h-4 text-lime-600 mr-2 flex-shrink-0"/>
                                                     {treatment}
                                                 </li>
@@ -259,10 +226,100 @@ export default function ServicesPageClient() {
                                 </CardContent>
                             </Card>
                         ))}
-
                     </div>
+
+                    {/* РОЗДІЛЕНІ ГРІДИ ДЛЯ ВЕЛИКИХ ЕКРАНІВ */}
+                    <div className="hidden lg:grid lg:grid-cols-3 gap-8 px-4">
+                        {services.slice(0, 3).map((service, i) => (
+                            <Card
+                                key={service.title}
+                                className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${
+                                    servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
+                                style={{transitionDelay: `${i * 150}ms`}}
+                            >
+                                <div id={service.id} className="relative">
+                                    <div className="relative aspect-[3/2] overflow-hidden">
+                                        <Image
+                                            fill
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+
+                                <CardContent className="p-8 group-hover:translate-y-[-4px] transition-all duration-500">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
+                                    <div className="space-y-3 mb-6">
+                                        <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">
+                                            Процедури включають:
+                                        </h4>
+                                        <ul className="space-y-2">
+                                            {service.treatments.map((treatment) => (
+                                                <li
+                                                    key={treatment}
+                                                    className="flex items-center text-sm text-gray-600 transition-all duration-300 hover:text-lime-600"
+                                                >
+                                                    <CheckCircle className="w-4 h-4 text-lime-600 mr-2 flex-shrink-0"/>
+                                                    {treatment}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+
+                    <div className="hidden lg:grid lg:grid-cols-4 gap-4 px-4 py-16">
+                        {services.slice(3).map((service, i) => (
+                            <Card
+                                key={service.title}
+                                className={`group bg-white border-0 overflow-hidden transform transition-all duration-700 ${
+                                    servicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                                }`}
+                                style={{transitionDelay: `${i * 150}ms`}}
+                            >
+                                <div id={service.id} className="relative">
+                                    <div className="relative aspect-[3/2] overflow-hidden">
+                                        <Image
+                                            fill
+                                            src={service.image}
+                                            alt={service.title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+
+                                <CardContent className="p-8 group-hover:translate-y-[-4px] transition-all duration-500">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">{service.description}</p>
+                                    <div className="space-y-3 mb-6">
+                                        <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">
+                                            Процедури включають:
+                                        </h4>
+                                        <ul className="space-y-2">
+                                            {service.treatments.map((treatment) => (
+                                                <li
+                                                    key={treatment}
+                                                    className="flex items-center text-sm text-gray-600 transition-all duration-300 hover:text-lime-600"
+                                                >
+                                                    <CheckCircle className="w-4 h-4 text-lime-600 mr-2 flex-shrink-0"/>
+                                                    {treatment}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+
                 </div>
             </section>
+
 
             {/* CTA Секція */}
             <section
