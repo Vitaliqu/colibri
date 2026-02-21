@@ -61,9 +61,12 @@ export const Footer: React.FC = () => {
                                 </p>
                             </div>
                             <div className="flex items-center gap-3">
-                                <Phone className="w-4 h-4 text-lime-400 flex-shrink-0"/>
-                                <span className="text-gray-300 text-sm">+380 96-80-55-446</span>
-                            </div>
+                                <a
+                                    href="tel:+380968055446"
+                                    className="text-gray-300 text-sm flex flex-row gap-3 hover:text-white transition-colors">
+                                    <Phone className="w-4 h-4 text-lime-400 flex-shrink-0"/>
+                                    +380 96-80-55-446
+                                </a></div>
                             <div className="flex items-center gap-3">
                                 <Mail className="w-4 h-4 text-lime-400 flex-shrink-0"/>
                                 <span className="text-gray-300 text-sm">kolibri.khust@gmail.com</span>
@@ -82,7 +85,8 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="border-t border-gray-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-2">
+                <div
+                    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-2">
                     <p className="text-gray-600 text-xs">
                         © 2025 Колібрі. Всі права захищені.
                     </p>

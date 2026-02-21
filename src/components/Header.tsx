@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
                         onClick={handlePhoneClick}
                         className={`h-10 px-5 cursor-pointer text-sm font-medium tracking-wide transition-all duration-300 ${
                             isPhoneOpen
-                                ? "bg-transparent hover:bg-gray-800 text-lime-400 border border-lime-400"
+                                ? "bg-transparent hover:bg-gray-200 text-lime-600 border border-lime-600"
                                 : "bg-lime-600 text-white hover:bg-lime-700"
                         }`}
                     >
