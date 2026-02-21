@@ -30,7 +30,7 @@ export default function AboutPageClient() {
         },
         {
             name: "Юлія Химишинець",
-            role: "Парадонтолог, ендоентіст",
+            role: "Парадонтолог, Ендодонтист",
             image: Svetlana,
             specialties: ["Лікування ясен", "Терапія кореневих каналів під мікроскопом"],
             bio: "Закінчила стоматфакультет Ужгородського університету, полюбляє працювати під мікроскопом і відбілювати зуби.",
@@ -62,18 +62,19 @@ export default function AboutPageClient() {
                     backgroundPosition: "right center",
                     backgroundRepeat: "no-repeat",
                 }}
-                         className="relative min-h-[calc(100vh-4.5rem)] flex justify-center mt-18 flex-col overflow-hidden">
-                    <div className="absolute inset-0 bg-black opacity-25"></div>
+                         className="relative min-h-[calc(100vh-4rem)] flex justify-center mt-16 flex-col overflow-hidden">
+                    <div className="absolute inset-0 bg-black/20"></div>
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                         <div
-                            className={`space-y-8 col-span-2 text-white transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
+                            className={`max-w-3xl text-white transition-all duration-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6">
                                 Ваша усмішка — наша
-                                <span className="block">Пристрасть</span>
+                                <span className="block text-lime-400">Пристрасть</span>
                             </h1>
-                            <p className="text-sm md:text-xl h-auto mt-2 leading-relaxed mb-8">
-                                Уже понад 6 років стоматологічна клініка Колібрі змінює усмішки та життя наших поцієнтів
+                            <div className="w-12 h-0.5 bg-lime-500 mb-8"/>
+                            <p className="text-sm md:text-lg text-white leading-relaxed">
+                                З дня відкриття у 2019му році лікарі стоматологічна клініка &#34;Колібрі&#34; змінює усмішки та життя наших поцієнтів
                                 завдяки турботливому та сучасному лікуванню. Наша місія проста: надавати виняткові
                                 стоматологічні послуги у теплій та привітній атмосфері. Тому всі наші лікарі працюють з
                                 3-х, або 5-ти кратним збільшенням і якісним освітленням фірми &#34;Univet&#34;, що
@@ -88,22 +89,24 @@ export default function AboutPageClient() {
                 </section>
 
                 {/* Наша команда */}
-                <section id={'doctors'} ref={teamRef}
-                         className="py-8 md:py-16 flex w-full justify-center items-center bg-gradient-to-br from-lime-50 via-white to-green-50">
-                    <div className="max-w-8xl flex flex-col items-center mx-auto md:gap-6 sm:px-6 px-8">
+                <section id={'doctors'} ref={teamRef} className="py-20 bg-white">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div
-                            className={`text-center transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                            className={`mb-14 transition-all duration-1000 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                            <p className="text-lime-600 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Наші
+                                лікарі</p>
+                            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
                                 Познайомтеся з нашою
                                 <span className="text-lime-600"> командою</span>
                             </h2>
+                            <div className="w-12 h-0.5 bg-lime-500"/>
                         </div>
 
-                        <div className="grid mx-12 md:p-6 w-full md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-2">
                             {teamMembers.map((member, i) => (
                                 <Card
                                     key={member.name}
-                                    className={`group mx-2 md:mx-0 bg-white/80 backdrop-blur transition-all border-0 overflow-hidden transform duration-700 ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                                    className={`group bg-white border-0 overflow-hidden transition-all duration-700 rounded-md ${teamVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                                     style={{transitionDelay: `${i * 150}ms`}}
                                 >
                                     <div className="relative">
@@ -114,27 +117,28 @@ export default function AboutPageClient() {
                                                 alt={member.name}
                                                 className="w-full h-full object-top object-cover"
                                             />
+                                            <div className="absolute inset-0 bg-black/0"/>
                                         </div>
                                     </div>
 
-                                    <CardContent className="p-8 flex flex-col justify-between w-full h-full">
-                                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                                    <CardContent className="p-8">
+                                        <h3 className="text-xl font-bold text-gray-900 mb-1">
                                             {member.name}
                                         </h3>
-                                        <p className="text-lime-600 font-semibold mb-4">
+                                        <p className="text-lime-600 text-sm font-medium mb-4">
                                             {member.role}
                                         </p>
-                                        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                        <p className="text-gray-500 text-sm leading-relaxed mb-6">
                                             {member.bio}
                                         </p>
 
                                         <div className="space-y-2">
-                                            <h4 className="font-semibold text-gray-900 text-sm">Спеціалізації:</h4>
+                                            <h4 className="font-semibold text-gray-900 text-xs tracking-wider uppercase">Спеціалізації:</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {member.specialties.map((specialty) => (
                                                     <span
                                                         key={specialty}
-                                                        className="bg-lime-100 text-lime-800 text-xs px-3 py-1 rounded-full"
+                                                        className="bg-gray-100 text-gray-700 text-xs px-3 py-1"
                                                     >
                                                     {specialty}
                                                 </span>

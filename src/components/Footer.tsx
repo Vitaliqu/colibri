@@ -1,6 +1,8 @@
 import React from "react";
 import {MapPin, Phone, Mail, Clock} from "lucide-react";
 import ServiceLink from "@/components/ServiceLink";
+import Image from "next/image";
+import logo from "./images/logo.png";
 
 export const Footer: React.FC = () => {
     const services = [
@@ -14,59 +16,61 @@ export const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="bg-gray-900 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-lime-900 opacity-90"></div>
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Бренд */}
+        <footer className="bg-gray-950 text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    {/* Brand */}
                     <div>
-                        <div className="flex items-center space-x-3 mb-6">
+                        <div className="flex items-center gap-3 mb-6">
+                            <Image src={logo} alt="Логотип Колібрі" className="w-12 rounded-full bg-white"/>
                             <div>
-                                <h3 className="text-2xl font-bold">Колібрі</h3>
-                                <p className="text-lime-300 text-sm">Стоматологічна клініка</p>
+                                <h3 className="text-xl font-bold text-white">Колібрі</h3>
+                                <p className="text-lime-400 text-xs tracking-wide">Стоматологічна клініка</p>
                             </div>
                         </div>
-                        <p className="text-gray-300 leading-relaxed">
-                            Ваша усмішка — наша пристрасть. Отримайте професійний стоматологічний догляд з турботою та
-                            індивідуальним підходом, щоб кожен візит був комфортним та плідним.
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                            Ваша усмішка — це наша пристрасть. щоб кожен ваш візит був комфортним та плідним.
                         </p>
                     </div>
 
-
-                    {/* Послуги */}
+                    {/* Services */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-lime-300">Послуги</h4>
-                        <ul className="space-y-3 text-gray-300">
+                        <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-300 mb-6">Послуги</h4>
+                        <ul className="space-y-3">
                             {services.map((service) => (
                                 <li key={service.name}>
-                                    <ServiceLink targetId={`${service.id}`}>{service.name}</ServiceLink>
+                                    <ServiceLink
+                                        targetId={`${service.id}`}
+                                        className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
+                                    >
+                                        {service.name}
+                                    </ServiceLink>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Контактна інформація */}
+                    {/* Contact */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 text-lime-300">Контакти</h4>
-                        <div className="space-y-4 text-gray-300">
-                            <div className="flex items-start space-x-3">
-                                <MapPin className="w-5 h-5 text-lime-400 mt-0.5 flex-shrink-0"/>
-                                <div>
-                                    <p>вулиця Пирогова 5а, </p>
-                                    <p>Хуст, Закарпатська область, Україна, 90400</p>
-                                </div>
+                        <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-300 mb-6">Контакти</h4>
+                        <div className="space-y-4">
+                            <div className="flex items-start gap-3">
+                                <MapPin className="w-4 h-4 text-lime-400 mt-0.5 flex-shrink-0"/>
+                                <p className="text-gray-300 text-sm leading-relaxed">
+                                    вулиця Пирогова 5а,<br/>Хуст, Закарпатська область, Україна, 90400
+                                </p>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <Phone className="w-5 h-5 text-lime-400"/>
-                                <span>+380 96-80-55-446</span>
+                            <div className="flex items-center gap-3">
+                                <Phone className="w-4 h-4 text-lime-400 flex-shrink-0"/>
+                                <span className="text-gray-300 text-sm">+380 96-80-55-446</span>
                             </div>
-                            <div className="flex items-center space-x-3">
-                                <Mail className="w-5 h-5 text-lime-400"/>
-                                <span>kolibri.khust@gmail.com</span>
+                            <div className="flex items-center gap-3">
+                                <Mail className="w-4 h-4 text-lime-400 flex-shrink-0"/>
+                                <span className="text-gray-300 text-sm">kolibri.khust@gmail.com</span>
                             </div>
-                            <div className="flex items-start space-x-3">
-                                <Clock className="w-5 h-5 text-lime-400 mt-0.5"/>
-                                <div>
+                            <div className="flex items-start gap-3">
+                                <Clock className="w-4 h-4 text-lime-400 mt-0.5 flex-shrink-0"/>
+                                <div className="text-gray-300 text-sm">
                                     <p>Пн-Пт: 8:00 - 20:00</p>
                                     <p>Сб: 09:00 - 16:00</p>
                                     <p>Нд: Вихідний</p>
@@ -75,13 +79,13 @@ export const Footer: React.FC = () => {
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="border-t border-gray-700 mt-12 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-gray-400 text-sm">
-                            © 2025 Колібрі. Всі права захищені.
-                        </p>
-                    </div>
+            <div className="border-t border-gray-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row justify-between items-center gap-2">
+                    <p className="text-gray-600 text-xs">
+                        © 2025 Колібрі. Всі права захищені.
+                    </p>
                 </div>
             </div>
         </footer>

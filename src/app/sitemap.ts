@@ -17,14 +17,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: 'https://kolibri-khust.com/services',
             lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
+            changeFrequency: 'monthly',
+            priority: 0.9,
         },
         {
             url: 'https://kolibri-khust.com/contact',
             lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
+            changeFrequency: 'yearly',
+            priority: 0.7,
         },
     ]
 }

@@ -9,6 +9,17 @@ interface ServiceLinkProps {
     className?: string;
 }
 
+// When duplicate IDs exist (mobile+desktop grids), getElementById returns the
+// first match which may be display:none. This picks the visible one instead.
+function findVisible(id: string): Element | null {
+    const matches = Array.from(document.querySelectorAll(`[id="${id}"]`));
+    return (
+        matches.find((el) => (el as HTMLElement).offsetParent !== null) ??
+        matches[0] ??
+        null
+    );
+}
+
 export default function ServiceLink({targetId, children, className}: ServiceLinkProps) {
     const pathname = usePathname();
     const router = useRouter();
@@ -17,47 +28,24 @@ export default function ServiceLink({targetId, children, className}: ServiceLink
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
 
-
         if (pathname === "/services") {
-            const scrollToTarget = () => {
-                const el = document.getElementById(targetId);
-                if (el) {
-                    const top = el.getBoundingClientRect().top + window.scrollY - 88;
-                    window.scrollTo({top, behavior: "smooth"});
-                }
-            };
-            // Already on /services → scroll only
-            scrollToTarget();
+            // Already on the page — scroll to the visible element immediately
+            const el = findVisible(targetId);
+            if (el) {
+                const top = el.getBoundingClientRect().top + window.scrollY - 88;
+                window.scrollTo({top, behavior: "smooth"});
+            }
         } else {
-            const scrollToTarget = () => {
-                const el = document.getElementById(targetId);
-                if (el) {
-                    const top = el.getBoundingClientRect().top + window.scrollY - 128;
-                    window.scrollTo({top, behavior: "smooth"});
-                }
-            };
-            // Navigate to /services (no query in URL)
+            // Navigate with the target in the URL; ServicesPageClient handles scroll
             startTransition(() => {
-                router.push("/services");
+                router.push(`/services?scrollTo=${targetId}`);
             });
-
-            // Try scrolling once the element exists
-            const interval = setInterval(() => {
-                const el = document.getElementById(targetId);
-                if (el) {
-                    scrollToTarget();
-                    clearInterval(interval);
-                }
-            }, 300);
-
-            // Safety timeout to clear interval
-            setTimeout(() => clearInterval(interval), 3000);
         }
     };
 
     return (
         <a
-            href="/services"
+            href={`/services?scrollTo=${targetId}`}
             onClick={handleClick}
             className={className}
         >

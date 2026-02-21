@@ -3,18 +3,18 @@
 import React, {useEffect, useState, useRef} from "react";
 import Link from "next/link";
 import {ArrowRight} from "lucide-react";
-import {Card, CardContent} from "@/components/ui/card";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import cosmetic from "./images/cosmetic.webp"
 import orthodental from "./images/orthodental.webp"
 import general from "./images/general.webp"
+import ServiceLink from "@/components/ServiceLink";
 
 const services = [
     {
         title: "Загальна стоматологія та ендодонтія",
         description:
-            "Комплексний догляд за ротовою порожниною, включає гігієнічні чистки, пломби та профілактичні процедури.",
+            "Комплексний догляд за ротовою порожниною включає пломбування зубів , лікування каналів , гігієнічні чистки та профілактичні процедури",
         image: general,
         color: "from-lime-400 to-green-500",
     },
@@ -52,76 +52,79 @@ export default function ServicesPreview() {
     }, []);
 
     return (
-        <section
-            ref={sectionRef}
-            className="py-8 md:py-24 bg-white relative overflow-hidden"
-        >
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-lime-50/30"></div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                {/* Заголовок */}
+        <section ref={sectionRef} className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header */}
                 <div
-                    className={`text-center mb-16 transition-all duration-1000 ${
-                        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                    }`}
-                >
-                    <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Комплексний стоматологічний догляд
-                        <span className="text-lime-600 block">для будь-яких потреб</span>
-                    </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        Від регулярних чисток до повного перетворення усмішки – наша команда
-                        забезпечує персоналізований догляд з використанням сучасних
-                        технологій та методик. А наявность у клініці стоматологічного мікроскопу,
-                        п&#39;єзотому, діодного лазера, інтраорального сканера Medit 700i та багато
-                        інших сучасних інструментів та матеріалів дозволяє вирішувати
-                        найскладніші завдання.
-                    </p>
+                    className={`mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+                    <p className="text-lime-600 text-xs font-semibold tracking-[0.2em] uppercase mb-3">Наші послуги</p>
+                    <div className="flex items-end justify-between gap-8">
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight max-w-xl">
+                            Комплексний стоматологічний догляд
+                            <span className="text-lime-600"> для будь-яких потреб</span>
+                        </h2>
+                        <div className="hidden lg:block w-px h-16 bg-gray-300 flex-shrink-0"/>
+                        <p className="hidden lg:block text-gray-600 max-w-sm leading-relaxed text-sm">
+                            Від регулярних чисток до повного перетворення усмішки – наша команда
+                            забезпечує персоналізований догляд з використанням сучасних технологій.
+                        </p>
+                    </div>
+                    <div className="w-12 h-0.5 bg-lime-500 mt-8"/>
                 </div>
 
-                {/* Сітка послуг */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-0 mb-12">
+                {/* Service grid */}
+                <div className="grid md:grid-cols-3 gap-2 ">
                     {services.map((service, i) => (
-                        <Card
+                        <div
                             key={service.title}
-                            className={`border-0 bg-white overflow-hidden transform -all duration-700`}
-                            style={{transitionDelay: `${i * 200}ms`}}
+                            className={`group relative overflow-hidden rounded-md border flex flex-col transition-all duration-700 last:border-r-0 border-gray-200  ${
+                                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                            }`}
+                            style={{transitionDelay: `${i * 150}ms`}}
                         >
-                            <div className="relative group">
-                                <div className="relative aspect-[4/3] overflow-hidden">
-                                    <Image
-                                        fill
-                                        src={service.image}
-                                        alt={service.title}
-                                        className="w-full h-full object-cover transform transition-transform"
-                                    />
-                                </div>
+                            {/* Image */}
+                            <div className="relative aspect-[4/3] overflow-hidden">
+                                <Image
+                                    fill
+                                    src={service.image}
+                                    alt={service.title}
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 "/>
                             </div>
-                            <CardContent className="p-6 group-hover:translate-y-[-4px] transition-all duration-500">
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">
+
+                            {/* Text */}
+                            <div
+                                className="p-6 flex flex-col flex-1 justify-between border-t border-gray-200 bg-white ">
+                                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-lime-600 transition-colors duration-300">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-500 text-sm leading-relaxed mb-4">
                                     {service.description}
                                 </p>
-                            </CardContent>
-                        </Card>
+                                <div
+                                    className="flex items-center text-lime-600 text-sm font-medium gap-1 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <ServiceLink
+                                        targetId={`${i + 1}`}
+                                        className={"flex "}
+                                    >
+                                        Детальніше <ArrowRight className="w-4 h-4"/>
+                                    </ServiceLink>
+                                </div>
+                            </div>
+                        </div>
                     ))}
                 </div>
 
-                {/* Кнопка перегляду всіх послуг */}
-                <div className="text-center">
+                {/* CTA */}
+                <div className="mt-12 flex justify-start">
                     <Button
                         asChild
-                        size="lg"
-                        className="relative bg-lime-600 hover:bg-lime-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 overflow-hidden"
+                        className="h-12 px-8 bg-gray-900 text-white hover:bg-gray-800 text-sm font-medium tracking-wide group"
                     >
-                        <Link href="/services" className="relative z-10 flex items-center">
+                        <Link href="/services" className="flex items-center gap-2">
                             Переглянути всі послуги
-                            <ArrowRight className="w-5 h-5 ml-2"/>
-                            {/* shimmer ефект */}
-                            <span
-                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000"></span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
                         </Link>
                     </Button>
                 </div>

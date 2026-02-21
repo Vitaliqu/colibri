@@ -23,7 +23,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-        <section className="relative mt-18 min-h-[calc(100vh-4.5rem)] flex items-center overflow-hidden">
+        <section className="relative mt-16 min-h-[calc(100vh-4rem)] flex items-center overflow-hidden">
 
             {/* Заднє фото */}
             <div
@@ -39,64 +39,53 @@ export default function HeroSection() {
                 style={{backgroundImage: `url(${clinicImage.src})`}}
             ></div>
 
-            {/* Темний градієнт */}
-            <div className="absolute inset-0 bg-black/25"></div>
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-black/20"></div>
 
             {/* Контент */}
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-3 mt-20 gap-6 items-center">
-                    <div className="space-y-8 col-span-2 text-white">
-                        <h1
-                            className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight drop-shadow-lg opacity-0 animate-fade-in"
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div className="max-w-3xl">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8 opacity-0 animate-fade-in">
+                        Ваша ідеальна
+                        <span className="block text-lime-400 animate-fade-in-delay">Усмішка</span>
+                        <span className="block animate-fade-in-delay2">чекає на вас</span>
+                    </h1>
+
+                    <div className="w-16 h-0.5 bg-lime-500 mb-8 opacity-0 animate-fade-in-delay2"></div>
+
+                    <p className="text-lg text-white max-w-xl mb-10 opacity-0 animate-fade-in-delay3">
+                        Отримайте дбайливий та комплексний стоматологічний догляд, де якість стоїть на першому
+                        місті.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-delay4">
+                        <Button
+                            onClick={handlePhoneClick}
+                            className={`h-12 px-8 text-base font-medium cursor-pointer shadow-lg transition-all duration-300 ${
+                                isPhoneOpen
+                                    ? "bg-transparent hover:bg-white/10 text-white border border-white"
+                                    : "bg-lime-600 text-white hover:bg-lime-700"
+                            }`}
                         >
-                            Ваша ідеальна
-                            <span className="block animate-fade-in-delay">Усмішка</span>
-                            <span className="animate-fade-in-delay2">чекає на вас</span>
-                        </h1>
+                            {isPhoneOpen ? (
+                                <div className="flex items-center justify-center gap-2">
+                                    <Phone className="w-5 h-5"/> +380 96-80-55-446
+                                </div>
+                            ) : (
+                                "Записатися на прийом"
+                            )}
+                        </Button>
 
-                        <p
-                            className="text-lg leading-relaxed max-w-lg drop-shadow-sm opacity-0 animate-fade-in-delay3"
+                        <Button
+                            asChild
+                            variant="outline"
+                            className="h-12 px-8 text-base font-medium border-white/40 text-white bg-transparent hover:bg-white/10 hover:text-white hover:border-white group"
                         >
-                            Отримайте дбайливий та комплексний стоматологічний догляд, де якість стоїть на першому
-                            місті.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-delay4">
-                            <Button
-                                asChild
-                                variant="outline"
-                                size="lg"
-                                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-semibold group relative overflow-hidden"
-                            >
-                                <Link href="/about">
-                                    <span className="relative z-10 flex items-center">
-                                        Детальніше
-                                        <ArrowRight
-                                            className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"/>
-                                    </span>
-                                    {/* shimmer ефект */}
-                                    <span
-                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
-                                </Link>
-                            </Button>
-
-                            <Button
-                                onClick={handlePhoneClick}
-                                className={`h-10 px-6 text-lg lg:text-lg cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 ${
-                                    isPhoneOpen
-                                        ? "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"
-                                        : "bg-lime-600 border-gray-300 text-white hover:bg-lime-700"
-                                }`}
-                            >
-                                {isPhoneOpen ? (
-                                    <div className="flex items-center cursor-pointer justify-center gap-2">
-                                        <Phone className="w-5 h-5"/> +380 96-80-55-446
-                                    </div>
-                                ) : (
-                                    "Записатися на прийом"
-                                )}
-                            </Button>
-                        </div>
+                            <Link href="/about">
+                                Детальніше
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"/>
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </div>

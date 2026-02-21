@@ -3,13 +3,7 @@ import ContactPageClient from "./ContactPageClient";
 
 const pageTitle = "Контакти – Стоматологія Колібрі | Хуст";
 const pageDescription =
-    "Зв’яжіться зі Стоматологією Колібрі у Хусті. +380 96-80-55-446, вулиця Пирогова 5а, Хуст, Закарпатська область, Україна, 90400, Години роботи\n" +
-    "\n" +
-    "Пн-Пт: 8:00 - 20:00\n" +
-    "\n" +
-    "Сб: 9:00 - 16:00\n" +
-    "\n" +
-    "Нд: вихідний.";
+    "Зв’яжіться зі Стоматологією Колібрі у Хусті. Тел.: +380 96-80-55-446. Адреса: вул. Пирогова 5а, Хуст, 90400. Пн-Пт: 8:00–20:00, Сб: 9:00–16:00, Нд: вихідний.";
 
 const siteUrl = "https://kolibri-khust.com";
 
@@ -18,11 +12,11 @@ export async function generateMetadata(): Promise<Metadata> {
         title: pageTitle,
         description: pageDescription,
         alternates: {
-            canonical: `${siteUrl}/contacts`,
+            canonical: `${siteUrl}/contact`,
         },
         openGraph: {
             type: "website",
-            url: `${siteUrl}/contacts`,
+            url: `${siteUrl}/contact`,
             title: pageTitle,
             description: pageDescription,
 

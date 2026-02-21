@@ -49,17 +49,48 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
-    const jsonLd = {
+    const jsonLdWebSite = {
         "@context": "https://schema.org",
-        "@id": "https://kolibri-khust.com/#website",
         "@type": "WebSite",
+        "@id": "https://kolibri-khust.com/#website",
+        "name": site_name,
         "alternateName": "Колібрі стоматологія Хуст",
         "description": metaDescription,
-        "name": site_name,
+        "url": "https://kolibri-khust.com",
         "publisher": {
             "@id": "https://kolibri-khust.com/#organization",
         },
+    };
+    const jsonLdOrganization = {
+        "@context": "https://schema.org",
+        "@type": "Dentist",
+        "@id": "https://kolibri-khust.com/#organization",
+        "name": "Стоматологія Колібрі",
         "url": "https://kolibri-khust.com",
+        "telephone": "+380968055446",
+        "image": og_image_url,
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "вулиця Пирогова 5а",
+            "addressLocality": "Хуст",
+            "addressRegion": "Закарпатська область",
+            "postalCode": "90400",
+            "addressCountry": "UA",
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "20:00",
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "09:00",
+                "closes": "16:00",
+            },
+        ],
     };
     return (
         <html lang="uk">
@@ -67,7 +98,11 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <meta name="apple-mobile-web-app-title" content="Колібрі"/>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+                dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLdWebSite)}}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLdOrganization)}}
             />
         </head>
 

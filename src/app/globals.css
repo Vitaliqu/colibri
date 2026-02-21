@@ -141,7 +141,7 @@
     }
 }
 
-@keyframes pulse-slow {
+@keyframes pulseSlow {
     0%, 100% {
         opacity: 1;
         transform: scale(1);
@@ -161,39 +161,34 @@
     }
 }
 
-.animate-fade-in {
-    animation: fadeIn 1s ease forwards;
-}
-
-.animate-fade-in-delay {
-    animation: fadeIn 1.2s ease forwards;
-}
-
-.animate-pulse-slow {
-    animation: pulse-slow 3s infinite;
-}
-
-.animate-bounce-slow {
-    animation: bounce-slow 2s infinite;
-}
-
-@keyframes fadeIn {
+@keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateX(-40px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-@keyframes pulseSlow {
-    0%, 100% {
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
         transform: scale(1);
     }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
     50% {
-        transform: scale(1.05);
+        transform: translateY(-20px);
     }
 }
 
@@ -219,4 +214,27 @@
 
 .animate-pulse-slow {
     animation: pulseSlow 2.5s infinite;
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2s infinite;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease forwards;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #65a30d, #16a34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
