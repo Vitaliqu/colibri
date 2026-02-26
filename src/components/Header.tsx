@@ -146,9 +146,9 @@ export const Header: React.FC = () => {
                                 )}
                             </Button>
                             <div className="text-center text-sm text-gray-500 flex flex-col items-center gap-1">
-                                <div className="flex items-center gap-2">
+                                <a href="mailto:kolibri.khust@gmail.com" className="flex items-center gap-2 hover:text-gray-700 transition-colors">
                                     <Mail className="w-4 h-4"/>kolibri.khust@gmail.com
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </SheetContent>

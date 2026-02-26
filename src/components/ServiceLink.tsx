@@ -46,7 +46,7 @@ export default function ServiceLink({targetId, children, className, "aria-label"
 
     return (
         <a
-            href={`/services?scrollTo=${targetId}`}
+            href="/services"
             onClick={handleClick}
             className={className}
             aria-label={ariaLabel}

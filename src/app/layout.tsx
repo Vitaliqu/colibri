@@ -3,9 +3,9 @@ import {Header} from "@/components/Header";
 import {Footer} from "@/components/Footer";
 import type {Metadata, Viewport} from "next";
 
-const metaTitle = "Стоматологія Колібрі";
+const metaTitle = "Стоматологі Колібрі";
 const metaDescription = "Стоматологія Колібрі у Хусті — сучасна клініка з професійним лікуванням зубів. Імплантація, протезування, гігієна, дитяча стоматологія."
-const site_name = "Стоматологія Колібрі";
+const site_name = "Стоматологічна клініка Колібрі";
 const site_domain = "kolibri-khust.com";
 const site_url = `https://${site_domain}`;
 const og_image_url = `${site_url}/opengraph-image.png`;

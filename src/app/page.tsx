@@ -3,17 +3,29 @@ import HeroSection from "@/components/HeroSection";
 import ServicesPreview from "@/components/ServicesPreview";
 import HomeClient from "@/components/HomeClient";
 
+const pageTitle = "Стоматологічна клініка Колібрі у місті Хуст";
+const pageDescription = "Стоматологічна клініка Колібрі у Хусті — комплексний стоматологічний догляд: лікування, імплантація, протезування, ортодонтія. Досвідчені лікарі.";
+
 export const metadata: Metadata = {
     title: {
-        absolute: "Стоматологія Колібрі | Хуст",
+        absolute: pageTitle,
     },
-    description: "Стоматологія Колібрі у Хусті — лікування зубів, імплантація, протезування, ортодонтія, дитяча стоматологія. Досвідчені лікарі та сучасне обладнання.",
+    description: pageDescription,
     alternates: {
         canonical: "https://kolibri-khust.com",
         languages: {
             "uk": "https://kolibri-khust.com",
             "x-default": "https://kolibri-khust.com",
         },
+    },
+    openGraph: {
+        type: "website",
+        url: "https://kolibri-khust.com",
+        title: pageTitle,
+        description: pageDescription,
+        images: [{url: "https://kolibri-khust.com/opengraph-image.png", width: 1200, height: 630, alt: "Стоматологічна клініка Колібрі — Хуст", type: "image/png"}],
+        locale: "uk_UA",
+        siteName: "Стоматологія Колібрі",
     },
 };
 

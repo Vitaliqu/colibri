@@ -185,7 +185,7 @@ export default function ContactPageClient() {
                                 <Mail className="w-5 shrink-0 h-5 text-lime-600 mt-0.5"/>
                                 <div>
                                     <p className="font-medium text-gray-900 text-sm">Email</p>
-                                    <p className="text-gray-500 text-sm">kolibri.khust@gmail.com</p>
+                                    <a href="mailto:kolibri.khust@gmail.com" className="text-gray-500 text-sm hover:text-lime-600 transition-colors">kolibri.khust@gmail.com</a>
                                     <p className="text-gray-400 text-xs mt-0.5">Відповідаємо протягом 24 годин</p>
                                 </div>
                             </div>
