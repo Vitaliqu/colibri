@@ -107,6 +107,7 @@ export default function ServicesPreview() {
                                     <ServiceLink
                                         targetId={`${i + 1}`}
                                         className={"flex "}
+                                        aria-label={`Детальніше про ${service.title}`}
                                     >
                                         Детальніше <ArrowRight className="w-4 h-4"/>
                                     </ServiceLink>

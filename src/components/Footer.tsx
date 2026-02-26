@@ -1,6 +1,6 @@
 import React from "react";
 import {MapPin, Phone, Mail, Clock} from "lucide-react";
-import ServiceLink from "@/components/ServiceLink";
+import Link from "next/link";
 import Image from "next/image";
 import logo from "./images/logo.png";
 
@@ -39,12 +39,12 @@ export const Footer: React.FC = () => {
                         <ul className="space-y-3">
                             {services.map((service) => (
                                 <li key={service.name}>
-                                    <ServiceLink
-                                        targetId={`${service.id}`}
+                                    <Link
+                                        href="/services"
                                         className="text-gray-300 text-sm hover:text-white transition-colors duration-200"
                                     >
                                         {service.name}
-                                    </ServiceLink>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

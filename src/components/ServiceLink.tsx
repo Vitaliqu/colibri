@@ -7,6 +7,7 @@ interface ServiceLinkProps {
     targetId: string;
     children: React.ReactNode;
     className?: string;
+    "aria-label"?: string;
 }
 
 // When duplicate IDs exist (mobile+desktop grids), getElementById returns the
@@ -20,7 +21,7 @@ function findVisible(id: string): Element | null {
     );
 }
 
-export default function ServiceLink({targetId, children, className}: ServiceLinkProps) {
+export default function ServiceLink({targetId, children, className, "aria-label": ariaLabel}: ServiceLinkProps) {
     const pathname = usePathname();
     const router = useRouter();
     const [, startTransition] = useTransition();
@@ -48,6 +49,7 @@ export default function ServiceLink({targetId, children, className}: ServiceLink
             href={`/services?scrollTo=${targetId}`}
             onClick={handleClick}
             className={className}
+            aria-label={ariaLabel}
         >
             {children}
         </a>
