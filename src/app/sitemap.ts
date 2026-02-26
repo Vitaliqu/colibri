@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: 'https://kolibri-khust.com',
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 1,
         },
         {
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: 'https://kolibri-khust.com/contact',
             lastModified: new Date(),
             changeFrequency: 'yearly',
-            priority: 0.7,
+            priority: 0.8,
         },
     ]
 }

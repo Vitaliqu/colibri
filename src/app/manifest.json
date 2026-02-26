@@ -1,6 +1,13 @@
 {
   "name": "Стоматологія Колібрі | Хуст",
   "short_name": "Колібрі",
+  "description": "Стоматологічна клініка Колібрі у Хусті — лікування зубів, імплантація, протезування, ортодонтія.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "uk",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -13,9 +20,18 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }

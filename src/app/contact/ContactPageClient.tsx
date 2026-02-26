@@ -80,9 +80,9 @@ export default function ContactPageClient() {
                             heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                         }`}
                     >
-                        <div className="text-4xl md:text-6xl font-bold mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
                             Контакти <span className="text-lime-400">Колібрі</span>
-                        </div>
+                        </h1>
                         <div className="w-12 h-0.5 bg-lime-500 mb-8"/>
                         <p className="text-white leading-relaxed">
                             Ми готові допомогти вам із будь-якими стоматологічними потребами.

@@ -76,7 +76,7 @@ export default function ServicesPageClient() {
     const services: Service[] = [
         {
             id: '1',
-            title: "Загальна стоматологія та індодондія",
+            title: "Загальна стоматологія та ендодонтія",
             description: "Комплексний догляд за зубами та яснами для дорослих і дітей.",
             image: general,
             treatments: [

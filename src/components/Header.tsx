@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
                 {/* Logo */}
                 <Link href="/" className="flex items-center space-x-0">
-                    <Image src={logo} alt="Логотип" priority className="w-16 mb-1"/>
+                    <Image src={logo} alt="Логотип стоматологічної клініки Колібрі" priority className="w-16 mb-1"/>
                     <div>
                         <div className="text-xl font-bold text-gray-600 leading-tight mb-0">
                             Колібрі
@@ -97,7 +97,7 @@ export const Header: React.FC = () => {
                     <SheetContent side="right" className="w-80 bg-white border-gray-400 flex flex-col">
                         <SheetHeader className="flex flex-row items-center justify-between">
                             <div className="flex items-center py-3 space-x-3">
-                                <Image src={logo} alt="Логотип" className="w-14"/>
+                                <Image src={logo} alt="Логотип стоматологічної клініки Колібрі" className="w-14"/>
                                 <div>
                                     <SheetTitle className="text-xl font-bold text-gray-600">Колібрі</SheetTitle>
                                     <SheetDescription className="text-xs text-lime-600">
